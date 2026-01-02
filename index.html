@@ -92,10 +92,10 @@
     </header>
 
     <!-- HERO SECTION MIT OPTIMIERTEM HINTERGRUND -->
-    <!-- pt-48 sorgt auf PC dafür, dass der Kopf unter dem Header beginnt. bg-[center_top] priorisiert den Kopfbereich. -->
-    <section class="relative bg-gray-900 bg-cover bg-[center_top] overflow-hidden min-h-[600px] md:min-h-0 pt-32 pb-20 md:pt-56 md:pb-32" style="background-image: url('hero_bg.JPG');">
-        <!-- Dunkles Overlay für bessere Lesbarkeit -->
-        <div class="absolute inset-0 bg-black opacity-60"></div>
+    <!-- bg-left-top auf Mobile, damit Florian (links im Bild) sichtbar bleibt. md:bg-[center_top] für Desktop. -->
+    <section class="relative bg-gray-900 bg-cover bg-left-top md:bg-[center_top] overflow-hidden min-h-[650px] md:min-h-0 pt-32 pb-20 md:pt-56 md:pb-32" style="background-image: url('hero_bg.JPG');">
+        <!-- Dunkleres Overlay (opacity-75) für maximalen Kontrast der weißen Schrift -->
+        <div class="absolute inset-0 bg-black opacity-75"></div>
         
         <div class="container mx-auto px-4 text-center max-w-5xl relative z-10">
             <h3 class="text-green-400 font-bold text-xl md:text-2xl mb-4 uppercase tracking-wide">100 % kostenloser Krypto- & Investment-Workshop</h3>
