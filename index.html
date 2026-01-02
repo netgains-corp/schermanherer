@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermann Scherer | Positionierung & Sichtbarkeit</title>
+    <title>Florian Merzenich | Strategischer Vermögensaufbau & Krypto</title>
     
     <!-- Tailwind CSS für das Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,14 +11,14 @@
     <!-- FontAwesome für Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Montserrat:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Montserrat & Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Montserrat:400,700,800,900|Roboto:400,700&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
         }
-        h1, h2, h3 {
+        h1, h2, h3, .brand-font {
             font-family: 'Montserrat', sans-serif;
         }
         .text-gold {
@@ -30,9 +30,24 @@
         .bg-gold:hover {
             background-color: #d49e00;
         }
-        .check-icon {
-            color: #2d2d2d;
+        
+        /* Logo Gradient Style - Metallischer Glanz-Effekt seitwärts */
+        .logo-text {
+            background: linear-gradient(90deg, 
+                #8a6d3b 0%, 
+                #e6c874 35%, 
+                #ffffff 50%, 
+                #e6c874 65%, 
+                #8a6d3b 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            line-height: 1;
         }
+        
         /* Modal Animation */
         .modal {
             transition: opacity 0.25s ease;
@@ -58,13 +73,17 @@
 <body class="bg-white text-gray-800">
 
     <!-- HEADER -->
-    <header class="bg-black text-white py-4 sticky top-0 z-40 shadow-lg">
+    <header class="bg-black text-white py-6 sticky top-0 z-40 shadow-xl border-b border-gray-900">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="w-48 mb-4 md:mb-0">
-                <img src="https://go.hermannscherer.com/hosted/images/a1/1fe6734efd4c2cb5b6c0f5ffc9d82e/logo.png" alt="Hermann Scherer Logo" class="w-full">
+            <div class="mb-6 md:mb-0">
+                <!-- Zentriertes Logo mit identischer Größe für Vor- und Nachname -->
+                <a href="#" class="brand-font font-extrabold uppercase flex flex-col items-center leading-[0.9] tracking-[0.1em]">
+                    <span class="text-3xl md:text-5xl logo-text block">Florian</span>
+                    <span class="text-3xl md:text-5xl logo-text block">Merzenich</span>
+                </a>
             </div>
             <div class="text-center md:text-right">
-                <p class="mb-2 text-sm md:text-base font-semibold hidden md:block">Donnerstag, 05. Februar um 19:00 Uhr - LIVE</p>
+                <p class="mb-2 text-sm md:text-base font-semibold hidden md:block">Nächster LIVE-Workshop: Donnerstag um 19:00 Uhr</p>
                 <button onclick="toggleModal()" class="bg-gold text-white font-bold py-2 px-6 rounded shadow hover:shadow-lg transition transform hover:scale-105">
                     Jetzt Platz sichern!
                 </button>
@@ -75,17 +94,17 @@
     <!-- HERO SECTION -->
     <section class="py-12 md:py-16">
         <div class="container mx-auto px-4 text-center max-w-5xl">
-            <h3 class="text-green-700 font-bold text-xl md:text-2xl mb-4">100 % kostenloser Live-Online-Workshop</h3>
+            <h3 class="text-green-700 font-bold text-xl md:text-2xl mb-4 uppercase tracking-wide">100 % kostenloser Krypto- & Investment-Workshop</h3>
             <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6 text-gray-900">
-                Positionierung & Sichtbarkeit, die wirklich verkauft.<br>
-                <span class="text-2xl md:text-4xl font-normal mt-2 block">Live-Online-Workshop für Coaches, Berater, Trainer & Unternehmer.</span>
+                System statt Finanzprodukt: Vermögensaufbau ohne Spekulation.<br>
+                <span class="text-2xl md:text-4xl font-normal mt-2 block text-gray-700">Werde zum souveränen Entscheider über dein Kapital.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-                In diesem Live-Workshop zeige ich Dir, wie Du Dein Business durch eine klare Positionierung gezielt aufs nächste Level bringst – mit Klarheit, Haltung und Wirkung statt lautem Marketing.
+            <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto italic">
+                „Dein Kontostand folgt deinem Kopf – nicht dem Markt.“
             </p>
 
             <button onclick="toggleModal()" class="bg-gold text-white text-xl md:text-2xl font-bold py-4 px-10 rounded shadow-lg transition transform hover:scale-105 mb-6 animate-bounce">
-                Jetzt Platz sichern!
+                Ja, ich will zum Strategie-Workshop!
             </button>
 
             <p class="text-center font-bold text-lg mb-4">Donnerstag, 05. Februar um 19:00 Uhr - LIVE</p>
@@ -101,7 +120,7 @@
                 <div><span id="seconds">00</span><div class="text-xs uppercase text-gray-500">Sek</div></div>
             </div>
             
-            <p class="text-red-600 text-sm mt-8">Hinweis: Die Teilnehmerzahl ist begrenzt.</p>
+            <p class="text-red-600 text-sm mt-8 font-semibold">Hinweis: Exklusiv für Unternehmer und Privatanleger mit Kapital.</p>
         </div>
     </section>
 
@@ -109,35 +128,34 @@
     <section class="py-12 bg-gray-50">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="flex flex-col md:flex-row items-center gap-10">
-                <!-- Image -->
-                <div class="w-full md:w-1/2">
-                    <img src="https://go.hermannscherer.com/hosted/images/4a/410ffdfe7344d4aeb2ee0905394a1c/Hermann-Scherer.png" alt="Hermann Scherer Portrait" class="w-full h-auto">
+                <div class="w-full md:w-1/2 text-center">
+                    <img src="images/portrait_freigestellt.png" onerror="this.src='https://placehold.co/400x600/png?text=Florian+Merzenich+Portrait'" alt="Florian Merzenich Portrait" class="mx-auto w-full max-w-sm h-auto drop-shadow-2xl">
                 </div>
-                <!-- Bullets -->
                 <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Schluss mit Banken-Abhängigkeit und Trends.</h2>
                     <ul class="space-y-6 text-lg md:text-xl text-gray-800">
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                            <span><b>Mehr Kunden</b> durch klare Positionierung</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <span><b>Kontrolle zurückgewinnen:</b> Steuere dein Vermögen selbstständig und strategisch.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                            <span><b>Mindset</b> für langfristiges Wachstum</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <span><b>Krypto-Expertise:</b> Nutze den Marktführer-Ansatz der „Crypto-Investor-Ausbildung“.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                            <span><b>Umsatzsteigerung</b> durch zielgerichtete Strategien</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <span><b>Echte Renditen:</b> Erfahre, wie Klienten zwischen +20% und +53% p.a. erzielen konnten.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
-                            <span><b>Vermeide Fehler</b> und nutze erprobte Erfolgs-Blaupausen</span>
+                            <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                            <span><b>Fehler vermeiden:</b> Die 3 größten Hürden beim Vermögensaufbau direkt eliminieren.</span>
                         </li>
                     </ul>
                     
                     <div class="mt-8 text-center md:text-left">
-                         <h3 class="text-gold font-bold text-2xl mb-4">kostenloser LIVE Workshop</h3>
+                         <h3 class="text-gold font-bold text-2xl mb-4">Hilfe zur Selbsthilfe – Jetzt anmelden</h3>
                          <button onclick="toggleModal()" class="bg-gold text-white font-bold py-3 px-8 rounded shadow hover:shadow-lg transition">
-                            Jetzt Platz sichern!
+                            Kostenlosen Platz sichern!
                         </button>
                     </div>
                 </div>
@@ -145,40 +163,44 @@
         </div>
     </section>
 
-    <!-- PROOF / BEKANNT AUS -->
+    <!-- PROOF SECTION (PARTNERS) -->
     <section class="py-8 bg-white border-t border-gray-200">
         <div class="container mx-auto px-4 max-w-6xl text-center">
-            <img src="https://go.hermannscherer.com/hosted/images/5a/965a552e7340fe94c316117492b4d0/Neues-Projekt-Kopie.jpg" alt="Bekannt aus Medien" class="mx-auto w-full max-w-4xl opacity-80">
+            <p class="text-gray-400 uppercase text-sm tracking-widest mb-6">Bekannt aus & Expertise in Verbindung mit</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale text-gray-800">
+                <span class="font-bold text-xl">FOCUS MONEY</span>
+                <span class="font-bold text-xl">WirtschaftsWoche</span>
+                <span class="font-bold text-xl">ntv</span>
+                <span class="font-bold text-xl">London Daily News</span>
+                <span class="font-bold text-xl">DEUTSCHES BUSINESS MAGAZIN</span>
+            </div>
         </div>
     </section>
 
     <!-- BENEFITS SECTION (DARK) -->
-    <section class="py-16 bg-gray-900 text-white relative bg-cover bg-center" style="background-image: url('https://go.hermannscherer.com/hosted/images/bc/fee9f4db4247e4a82b16bd8c79684f/DJI_0hh004-Pano-2.png');">
-        <div class="absolute inset-0 bg-black opacity-75"></div>
-        <div class="container mx-auto px-4 max-w-6xl relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">In diesem gratis Online-Workshop erfährst Du:</h2>
+    <section class="py-16 bg-gray-900 text-white relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+        <div class="absolute inset-0 bg-black opacity-85"></div>
+        <div class="container mx-auto px-4 max-w-6xl relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Deine Strategie für finanzielle Intelligenz:</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <!-- Box 1 -->
-                <div class="p-4">
-                    <img src="https://go.hermannscherer.com/hosted/images/33/601615fe914581902f3dfcc7c9a440/scherer-speakerreport-vorteile-icon-aktuell.png" class="mx-auto h-24 mb-4" alt="Icon 1">
-                    <h3 class="text-2xl font-bold mb-2 text-gold">#1</h3>
-                    <h4 class="font-bold text-lg mb-2">Positionierung & Mindset</h4>
-                    <p class="text-gray-300">Lerne, wie Du Dich klar positionierst und ein starkes Mindset entwickelst, um Dich in Deinem Markt erfolgreich zu behaupten.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-gray-700">
+                    <i class="fas fa-microchip text-4xl mb-4 text-gold"></i>
+                    <h3 class="text-2xl font-bold mb-2 text-gold">Usecape System</h3>
+                    <h4 class="font-bold text-lg mb-2 text-white">Technologie & Strategie</h4>
+                    <p class="text-gray-300">Warum strategische Investments kein Glück, sondern ein wiederholbares System brauchen.</p>
                 </div>
-                 <!-- Box 2 -->
-                 <div class="p-4">
-                    <img src="https://go.hermannscherer.com/hosted/images/96/87d74731ae4945954357750c2af731/scherer-speakerreport-grafik-v.png" class="mx-auto h-24 mb-4" alt="Icon 2">
-                    <h3 class="text-2xl font-bold mb-2 text-gold">#2</h3>
-                    <h4 class="font-bold text-lg mb-2">Strategien für Aufmerksamkeit</h4>
-                    <p class="text-gray-300">Gewinne die Aufmerksamkeit Deiner Zielgruppe und erhalte mehr Kundenanfragen durch bewährte Methoden.</p>
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-gray-700">
+                    <i class="fab fa-bitcoin text-4xl mb-4 text-gold"></i>
+                    <h3 class="text-2xl font-bold mb-2 text-gold">Krypto-Investor</h3>
+                    <h4 class="font-bold text-lg mb-2 text-white">Marktführerschaft</h4>
+                    <p class="text-gray-300">Lerne vom Experten für Krypto-Ausbildung, wie du Assets wirklich verstehst und steuerst.</p>
                 </div>
-                 <!-- Box 3 -->
-                 <div class="p-4">
-                    <img src="https://go.hermannscherer.com/hosted/images/71/48fe4dac9a4a6080e7e97fb5ac3e7b/scherer-speakerreport-grafik-krone.png" class="mx-auto h-24 mb-4" alt="Icon 3">
-                    <h3 class="text-2xl font-bold mb-2 text-gold">#3</h3>
-                    <h4 class="font-bold text-lg mb-2">Exklusive Angebote & Q&A</h4>
-                    <p class="text-gray-300">Erhalte spezielle Angebote und stelle Deine Fragen im direkten Austausch während der Live-Q&A-Session.</p>
+                <div class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-gray-700">
+                    <i class="fas fa-chart-line text-4xl mb-4 text-gold"></i>
+                    <h3 class="text-2xl font-bold mb-2 text-gold">Rendite-Fokus</h3>
+                    <h4 class="font-bold text-lg mb-2 text-white">Echte Zahlen</h4>
+                    <p class="text-gray-300">Basierend auf 5.000+ Begleitungen zeigen wir dir den Weg zu überdurchschnittlicher Performance.</p>
                 </div>
             </div>
         </div>
@@ -187,214 +209,135 @@
     <!-- VIDEO SECTION -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4 max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-8 text-red-600">Was erwartet Dich im Workshop?</h2>
-            
-            <div class="rounded-xl overflow-hidden shadow-2xl mb-8 border-4 border-gray-200">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900">Was erwartet Dich im Strategie-Workshop?</h2>
+            <div class="rounded-xl overflow-hidden shadow-2xl mb-8 border-4 border-gray-100">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1073564141?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <!-- Aktualisiertes Vimeo Video für Florian Merzenich -->
+                    <iframe src="https://player.vimeo.com/video/1095979491?h=7526156082&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-
-            <h2 class="text-2xl font-bold text-gray-800">Welche Inhalte erhältst Du und wie kannst Du sie für Dich nutzen?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Florian Merzenich erklärt dir persönlich, warum klassische Finanzberater oft versagen und wie du die volle Kontrolle über dein Kapital übernimmst.</p>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="py-16 bg-gray-100">
+    <!-- ABOUT SECTION -->
+    <section class="py-16 bg-gray-50 border-t">
         <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Das sagen Teilnehmer:innen:</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-6 rounded shadow text-center">
-                    <img src="https://go.hermannscherer.com/hosted/images/68/5dcf4618d14f4c9308a96cc9ab1890/testi1_Zeichenflache-1.png" class="mx-auto w-20 mb-4 rounded-full" alt="Johann Hofmann">
-                    <p class="italic text-gray-600 mb-4">"Dank Deiner Impulse wurde ich tatsächlich zu einem der begehrtesten Experten für Industrie 4.0 in Deutschland."</p>
-                    <div class="border-t w-16 mx-auto border-gray-300 my-4"></div>
-                    <p class="font-bold">- Johann Hofmann -</p>
-                    <img src="https://go.hermannscherer.com/hosted/images/1b/f2cfbece264d0fb2f3cc69fca146f1/quote-template-5star-separat_Zeichenflache-1_Zeichenflache-1.png" class="mx-auto w-24 mt-2" alt="5 Stars">
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-6 rounded shadow text-center">
-                    <img src="https://go.hermannscherer.com/hosted/images/68/5dcf4618d14f4c9308a96cc9ab1890/testi1_Zeichenflache-1.png" class="mx-auto w-20 mb-4 rounded-full" alt="Michael von Kunhardt">
-                    <p class="italic text-gray-600 mb-4">"Ich finde Dein Programm absolut großartig! TV-Präsenz im WDR und ZDF, eigene Radio-Kolumne..."</p>
-                    <div class="border-t w-16 mx-auto border-gray-300 my-4"></div>
-                    <p class="font-bold">- Michael von Kunhardt -</p>
-                    <img src="https://go.hermannscherer.com/hosted/images/1b/f2cfbece264d0fb2f3cc69fca146f1/quote-template-5star-separat_Zeichenflache-1_Zeichenflache-1.png" class="mx-auto w-24 mt-2" alt="5 Stars">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT HERMANN -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-4xl font-bold text-center mb-8">Hermann Scherer</h2>
+            <h2 class="text-4xl font-bold text-center mb-4">Wer ist Florian Merzenich?</h2>
             <div class="w-24 h-1 bg-gold mx-auto mb-12"></div>
             
-            <div class="flex flex-col md:flex-row gap-10 items-start">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
                 <div class="w-full md:w-1/3">
-                    <img src="https://go.hermannscherer.com/hosted/images/6a/1af5af464348118610cf068ed8f4d9/_SL_9696-2.jpg" class="rounded shadow w-full" alt="Hermann Scherer">
-                    <div class="mt-4 text-center">
-                        <img src="https://www.provenexpert.com/badge/topservice.js?id=1HwZkWGZk9TpmqGB1xwZ3NQp04zZkAQp&w=180&key=tekxryfq" class="hidden"> <!-- Placeholder for badge logic -->
-                        <span class="text-xs text-gray-400">ProvenExpert Badge Platzhalter</span>
-                    </div>
+                    <img src="images/portrait_bio.jpg" onerror="this.src='https://placehold.co/400x400/png?text=Florian+Bio'" class="rounded-2xl shadow-xl w-full border-4 border-white" alt="Florian Merzenich">
                 </div>
                 <div class="w-full md:w-2/3">
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        Über 3.000 Vorträge vor rund zwei Millionen Menschen in über 3.000 Unternehmen in über 30 Ländern, 60 Bücher in 21 Sprachen, 1.000 Presseveröffentlichungen, 50.000.000 Euro Umsatz... Das ist Hermann Scherer.
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Florian Merzenich ist Experte für Investitionen und Krypto sowie Mitgründer von <b>„Usecape“</b>. Er gilt als Marktführer in der Crypto-Investor-Ausbildung und ist seit 2013 aktiv am Markt.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        Er macht Menschen zu Marken, damit sie das verdienen, was sie wert sind. Niemand hat in D-A-CH mehr Redner und Marken auf die Bühne gebracht als Hermann Scherer.
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Für seine eigene Entwicklung hat er über <b>120.000 €</b> investiert und mehr als 300 Coaching-Stunden absolviert, um heute Unternehmern und Anlegern dabei zu helfen, Kapital ohne Spekulation zu vermehren.
                     </p>
-                    
-                    <ul class="space-y-2 font-bold text-gray-800">
-                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 3 Spiegel-Bestseller</li>
-                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 60 veröffentlichte Bücher</li>
-                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 30 Jahre Bühnenerfahrung</li>
-                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 2.000.000 begeisterte Teilnehmer</li>
+                    <ul class="space-y-4 font-bold text-gray-800">
+                        <li class="flex items-center"><i class="fas fa-university text-gold mr-3"></i> Über 5.000 begleitete Investoren</li>
+                        <li class="flex items-center"><i class="fas fa-star text-gold mr-3"></i> 50+ verifizierte 5-Sterne Bewertungen</li>
+                        <li class="flex items-center"><i class="fas fa-podcast text-gold mr-3"></i> Host des bekannten Investment-Podcasts</li>
                     </ul>
                 </div>
-            </div>
-
-            <!-- Press Logos -->
-            <div class="mt-16 text-center">
-                <h3 class="text-2xl font-bold mb-8">Die Presse über Hermann Scherer</h3>
-                <div class="flex flex-wrap justify-center items-center gap-8 opacity-70 grayscale">
-                    <img src="//go.hermannscherer.com/hosted/images/a8/7c90e46fa74030b5b9b626864f4c20/Neue-Westfalische-Zeitung.jpg" class="h-8">
-                    <img src="https://partner.hermannscherer.com/hosted/images/4e/7718edd7e444d49ce738645c93c563/Nordbayerischer-Kurier.png" class="h-8">
-                    <img src="//go.hermannscherer.com/hosted/images/bf/2d1352eef14843bcef80af81913884/Suddeutsche-Zeitung-Logo.png" class="h-10">
-                    <img src="https://partner.hermannscherer.com/hosted/images/81/36070d03e54a3282c65233c1a24262/Focus.png" class="h-8">
-                    <img src="https://partner.hermannscherer.com/hosted/images/bb/9ff826c3cb40a0b711feec79f671a9/RTL_Logo.png" class="h-8">
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <button onclick="toggleModal()" class="bg-gold text-white font-bold py-4 px-12 rounded text-xl shadow-lg transition transform hover:scale-105">
-                    Jetzt Platz sichern!
-                </button>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black text-white py-8 border-t-4 border-blue-600">
-        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
-            <p class="mb-4">
-                <a href="#" class="hover:text-white">Datenschutz</a> · 
-                <a href="#" class="hover:text-white">Impressum</a> · 
-                <a href="#" class="hover:text-white">AGB</a>
+    <footer class="bg-black text-white py-12 border-t-4 border-gold">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-8">
+                <a href="#" class="brand-font font-bold uppercase tracking-widest logo-text text-2xl">Florian Merzenich</a>
+            </div>
+            <div class="mb-6 flex flex-wrap justify-center gap-6 text-sm">
+                <a href="#" class="text-gray-400 hover:text-white transition">Datenschutzerklärung</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Impressum</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">AGB</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Haftungsausschluss</a>
+            </div>
+            <p class="text-gray-500 text-xs mb-4 max-w-2xl mx-auto leading-relaxed">
+                Hinweis: Die Performance-Angaben (+20% bis +53%) basieren auf internen Portfoliobewertungen des Zeitraums 2018-2024. Ergebnisse der Vergangenheit sind keine Garantie für zukünftige Erfolge. Investments sind mit Risiken verbunden.
             </p>
-            <p class="mb-4">This site is not a part of the Facebook TM website or Facebook TM Inc.</p>
-            <p class="mb-4">E-Mail: <a href="mailto:info@hermannscherer.com" class="text-white">info@hermannscherer.com</a></p>
-            <p>© 2024 Scherer GmbH & Co. KG</p>
+            <p class="text-gray-600 text-xs">© 2024 Merzenich GmbH & Co. KG | Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
     <!-- MODAL POPUP -->
     <div id="modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
-        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50" onclick="toggleModal()"></div>
-        
-        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto transform transition-all duration-300 scale-95">
-            
-            <!-- Modal Content -->
-            <div class="modal-content py-4 text-left px-6 relative">
-                <!-- Close Button -->
-                <div class="absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-gray-700 text-sm z-50" onclick="toggleModal()">
+        <div class="modal-overlay absolute w-full h-full bg-black opacity-80" onclick="toggleModal()"></div>
+        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded-xl shadow-2xl z-50 overflow-y-auto transform transition-all duration-300 scale-95 border-t-8 border-gold">
+            <div class="modal-content py-8 text-left px-10 relative">
+                <div class="absolute top-0 right-0 cursor-pointer p-4 text-gray-400 hover:text-gray-600" onclick="toggleModal()">
                     <i class="fas fa-times text-2xl"></i>
                 </div>
-
-                <!-- Progress Bar -->
-                <div class="w-full bg-gray-200 rounded-full h-4 mb-4 mt-6">
-                    <div class="bg-gold h-4 rounded-full text-xs text-white text-center leading-4 font-bold" style="width: 75%">Fast geschafft...</div>
+                
+                <div class="text-center mb-6">
+                    <div class="w-full bg-gray-100 rounded-full h-3 mb-4">
+                        <div class="bg-gold h-3 rounded-full shadow-inner" style="width: 85%"></div>
+                    </div>
+                    <p class="text-xs font-bold text-gold uppercase tracking-tighter">Fast geschafft - Nur noch ein Schritt</p>
                 </div>
 
-                <h3 class="text-xl font-bold text-center mb-4 leading-tight">
-                    Sichere Dir jetzt Deinen Platz und sei beim<br>
-                    <span class="text-blue-600">LIVE Online-Workshop dabei!</span>
-                </h3>
+                <h3 class="text-2xl font-bold text-center mb-2 leading-tight">Dein Strategiegespräch</h3>
+                <p class="text-sm text-gray-500 text-center mb-6">Wähle deinen Wunschtermin für den Live-Workshop.</p>
 
                 <form class="space-y-4">
-                    <div>
-                        <select class="w-full border border-gray-300 p-3 rounded bg-gray-50 focus:outline-none focus:border-blue-500">
-                            <option>Donnerstag, 05. Februar - 19:00 Uhr</option>
+                    <div class="relative">
+                        <i class="fas fa-calendar absolute left-3 top-4 text-gray-400"></i>
+                        <select class="w-full border-2 border-gray-100 p-3 pl-10 rounded-lg focus:border-gold outline-none transition bg-gray-50">
+                            <option>Donnerstag, 05. Februar - 19:00 Uhr (LIVE)</option>
+                            <option>Nächste Woche - Donnerstag 19:00 Uhr</option>
                         </select>
                     </div>
-                    <div>
-                        <input type="text" placeholder="Dein Vorname" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Dein Nachname" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div>
-                        <input type="email" placeholder="Deine E-Mail Adresse" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
-                    </div>
-
-                    <p class="text-xs text-gray-500 text-center">
-                        Mit Absendung stimme ich der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.
-                    </p>
-
-                    <button type="button" class="w-full bg-gold text-white font-bold py-3 rounded shadow hover:bg-yellow-600 transition">
-                        Ja, ich will teilnehmen
+                    <input type="text" placeholder="Vorname" class="w-full border-2 border-gray-100 p-3 rounded-lg focus:border-gold outline-none transition">
+                    <input type="text" placeholder="Nachname" class="w-full border-2 border-gray-100 p-3 rounded-lg focus:border-gold outline-none transition">
+                    <input type="email" placeholder="E-Mail Adresse" class="w-full border-2 border-gray-100 p-3 rounded-lg focus:border-gold outline-none transition">
+                    
+                    <button type="button" class="w-full bg-gold text-white font-bold py-4 rounded-lg shadow-xl hover:bg-yellow-600 transition transform hover:scale-[1.02] text-lg mt-2">
+                        Ja, ich will teilnehmen!
                     </button>
-
-                    <p class="text-center text-xs text-gray-400 mt-2">
-                        <i class="fas fa-lock"></i> Deine Daten sind bei uns sicher.
+                    
+                    <p class="text-[10px] text-gray-400 text-center leading-tight">
+                        Mit deiner Anmeldung stimmst du der Verarbeitung deiner Daten zu. Deine Sicherheit ist uns wichtig – 100% DSGVO konform.
                     </p>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT -->
     <script>
-        // Modal Logic
         function toggleModal() {
-            const body = document.querySelector('body');
             const modal = document.querySelector('#modal');
-            const modalContainer = document.querySelector('.modal-container');
-
             modal.classList.toggle('opacity-0');
             modal.classList.toggle('pointer-events-none');
-            body.classList.toggle('modal-active');
-
-            if (!modal.classList.contains('opacity-0')) {
-                modalContainer.classList.remove('scale-95');
-                modalContainer.classList.add('scale-100');
-            } else {
-                modalContainer.classList.remove('scale-100');
-                modalContainer.classList.add('scale-95');
-            }
+            document.body.classList.toggle('modal-active');
         }
 
-        // Countdown Logic (set to next Thursday for demo purposes)
         function startCountdown() {
-            // Set date to 3 days from now for demo
-            const countDownDate = new Date();
-            countDownDate.setDate(countDownDate.getDate() + 3);
-            countDownDate.setHours(19, 0, 0);
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 2);
+            targetDate.setHours(19, 0, 0);
 
-            const x = setInterval(function() {
+            const x = setInterval(() => {
                 const now = new Date().getTime();
-                const distance = countDownDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("days").innerHTML = (days < 10 ? "0" : "") + days;
-                document.getElementById("hours").innerHTML = (hours < 10 ? "0" : "") + hours;
-                document.getElementById("minutes").innerHTML = (minutes < 10 ? "0" : "") + minutes;
-                document.getElementById("seconds").innerHTML = (seconds < 10 ? "0" : "") + seconds;
-
-                if (distance < 0) {
+                const diff = targetDate - now;
+                
+                if (diff < 0) {
                     clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "Gestartet";
+                    document.getElementById("countdown").innerHTML = "<div class='text-gold'>LIVE GESTARTET</div>";
+                    return;
                 }
+
+                document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
             }, 1000);
         }
-
         startCountdown();
     </script>
 </body>
