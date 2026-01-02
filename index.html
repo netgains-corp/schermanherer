@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermann Scherer | Positionierung & Sichtbarkeit</title>
+    
+    <!-- Tailwind CSS für das Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Montserrat:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .text-gold {
+            color: #dcb041;
+        }
+        .bg-gold {
+            background-color: #f2b500;
+        }
+        .bg-gold:hover {
+            background-color: #d49e00;
+        }
+        .check-icon {
+            color: #2d2d2d;
+        }
+        /* Modal Animation */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- HEADER -->
+    <header class="bg-black text-white py-4 sticky top-0 z-40 shadow-lg">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="w-48 mb-4 md:mb-0">
+                <img src="https://go.hermannscherer.com/hosted/images/a1/1fe6734efd4c2cb5b6c0f5ffc9d82e/logo.png" alt="Hermann Scherer Logo" class="w-full">
+            </div>
+            <div class="text-center md:text-right">
+                <p class="mb-2 text-sm md:text-base font-semibold hidden md:block">Donnerstag, 05. Februar um 19:00 Uhr - LIVE</p>
+                <button onclick="toggleModal()" class="bg-gold text-white font-bold py-2 px-6 rounded shadow hover:shadow-lg transition transform hover:scale-105">
+                    Jetzt Platz sichern!
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="py-12 md:py-16">
+        <div class="container mx-auto px-4 text-center max-w-5xl">
+            <h3 class="text-green-700 font-bold text-xl md:text-2xl mb-4">100 % kostenloser Live-Online-Workshop</h3>
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6 text-gray-900">
+                Positionierung & Sichtbarkeit, die wirklich verkauft.<br>
+                <span class="text-2xl md:text-4xl font-normal mt-2 block">Live-Online-Workshop für Coaches, Berater, Trainer & Unternehmer.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                In diesem Live-Workshop zeige ich Dir, wie Du Dein Business durch eine klare Positionierung gezielt aufs nächste Level bringst – mit Klarheit, Haltung und Wirkung statt lautem Marketing.
+            </p>
+
+            <button onclick="toggleModal()" class="bg-gold text-white text-xl md:text-2xl font-bold py-4 px-10 rounded shadow-lg transition transform hover:scale-105 mb-6 animate-bounce">
+                Jetzt Platz sichern!
+            </button>
+
+            <p class="text-center font-bold text-lg mb-4">Donnerstag, 05. Februar um 19:00 Uhr - LIVE</p>
+
+            <!-- Countdown -->
+            <div class="flex justify-center space-x-4 text-center font-mono text-2xl md:text-4xl font-bold text-gray-800" id="countdown">
+                <div><span id="days">00</span><div class="text-xs uppercase text-gray-500">Tage</div></div>
+                <div>:</div>
+                <div><span id="hours">00</span><div class="text-xs uppercase text-gray-500">Std</div></div>
+                <div>:</div>
+                <div><span id="minutes">00</span><div class="text-xs uppercase text-gray-500">Min</div></div>
+                <div>:</div>
+                <div><span id="seconds">00</span><div class="text-xs uppercase text-gray-500">Sek</div></div>
+            </div>
+            
+            <p class="text-red-600 text-sm mt-8">Hinweis: Die Teilnehmerzahl ist begrenzt.</p>
+        </div>
+    </section>
+
+    <!-- CONTENT SPLIT SECTION -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <!-- Image -->
+                <div class="w-full md:w-1/2">
+                    <img src="https://go.hermannscherer.com/hosted/images/4a/410ffdfe7344d4aeb2ee0905394a1c/Hermann-Scherer.png" alt="Hermann Scherer Portrait" class="w-full h-auto">
+                </div>
+                <!-- Bullets -->
+                <div class="w-full md:w-1/2">
+                    <ul class="space-y-6 text-lg md:text-xl text-gray-800">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                            <span><b>Mehr Kunden</b> durch klare Positionierung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                            <span><b>Mindset</b> für langfristiges Wachstum</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                            <span><b>Umsatzsteigerung</b> durch zielgerichtete Strategien</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-600 mt-1 mr-3"></i>
+                            <span><b>Vermeide Fehler</b> und nutze erprobte Erfolgs-Blaupausen</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 text-center md:text-left">
+                         <h3 class="text-gold font-bold text-2xl mb-4">kostenloser LIVE Workshop</h3>
+                         <button onclick="toggleModal()" class="bg-gold text-white font-bold py-3 px-8 rounded shadow hover:shadow-lg transition">
+                            Jetzt Platz sichern!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF / BEKANNT AUS -->
+    <section class="py-8 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4 max-w-6xl text-center">
+            <img src="https://go.hermannscherer.com/hosted/images/5a/965a552e7340fe94c316117492b4d0/Neues-Projekt-Kopie.jpg" alt="Bekannt aus Medien" class="mx-auto w-full max-w-4xl opacity-80">
+        </div>
+    </section>
+
+    <!-- BENEFITS SECTION (DARK) -->
+    <section class="py-16 bg-gray-900 text-white relative bg-cover bg-center" style="background-image: url('https://go.hermannscherer.com/hosted/images/bc/fee9f4db4247e4a82b16bd8c79684f/DJI_0hh004-Pano-2.png');">
+        <div class="absolute inset-0 bg-black opacity-75"></div>
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">In diesem gratis Online-Workshop erfährst Du:</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Box 1 -->
+                <div class="p-4">
+                    <img src="https://go.hermannscherer.com/hosted/images/33/601615fe914581902f3dfcc7c9a440/scherer-speakerreport-vorteile-icon-aktuell.png" class="mx-auto h-24 mb-4" alt="Icon 1">
+                    <h3 class="text-2xl font-bold mb-2 text-gold">#1</h3>
+                    <h4 class="font-bold text-lg mb-2">Positionierung & Mindset</h4>
+                    <p class="text-gray-300">Lerne, wie Du Dich klar positionierst und ein starkes Mindset entwickelst, um Dich in Deinem Markt erfolgreich zu behaupten.</p>
+                </div>
+                 <!-- Box 2 -->
+                 <div class="p-4">
+                    <img src="https://go.hermannscherer.com/hosted/images/96/87d74731ae4945954357750c2af731/scherer-speakerreport-grafik-v.png" class="mx-auto h-24 mb-4" alt="Icon 2">
+                    <h3 class="text-2xl font-bold mb-2 text-gold">#2</h3>
+                    <h4 class="font-bold text-lg mb-2">Strategien für Aufmerksamkeit</h4>
+                    <p class="text-gray-300">Gewinne die Aufmerksamkeit Deiner Zielgruppe und erhalte mehr Kundenanfragen durch bewährte Methoden.</p>
+                </div>
+                 <!-- Box 3 -->
+                 <div class="p-4">
+                    <img src="https://go.hermannscherer.com/hosted/images/71/48fe4dac9a4a6080e7e97fb5ac3e7b/scherer-speakerreport-grafik-krone.png" class="mx-auto h-24 mb-4" alt="Icon 3">
+                    <h3 class="text-2xl font-bold mb-2 text-gold">#3</h3>
+                    <h4 class="font-bold text-lg mb-2">Exklusive Angebote & Q&A</h4>
+                    <p class="text-gray-300">Erhalte spezielle Angebote und stelle Deine Fragen im direkten Austausch während der Live-Q&A-Session.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-8 text-red-600">Was erwartet Dich im Workshop?</h2>
+            
+            <div class="rounded-xl overflow-hidden shadow-2xl mb-8 border-4 border-gray-200">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/1073564141?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-gray-800">Welche Inhalte erhältst Du und wie kannst Du sie für Dich nutzen?</h2>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Das sagen Teilnehmer:innen:</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded shadow text-center">
+                    <img src="https://go.hermannscherer.com/hosted/images/68/5dcf4618d14f4c9308a96cc9ab1890/testi1_Zeichenflache-1.png" class="mx-auto w-20 mb-4 rounded-full" alt="Johann Hofmann">
+                    <p class="italic text-gray-600 mb-4">"Dank Deiner Impulse wurde ich tatsächlich zu einem der begehrtesten Experten für Industrie 4.0 in Deutschland."</p>
+                    <div class="border-t w-16 mx-auto border-gray-300 my-4"></div>
+                    <p class="font-bold">- Johann Hofmann -</p>
+                    <img src="https://go.hermannscherer.com/hosted/images/1b/f2cfbece264d0fb2f3cc69fca146f1/quote-template-5star-separat_Zeichenflache-1_Zeichenflache-1.png" class="mx-auto w-24 mt-2" alt="5 Stars">
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded shadow text-center">
+                    <img src="https://go.hermannscherer.com/hosted/images/68/5dcf4618d14f4c9308a96cc9ab1890/testi1_Zeichenflache-1.png" class="mx-auto w-20 mb-4 rounded-full" alt="Michael von Kunhardt">
+                    <p class="italic text-gray-600 mb-4">"Ich finde Dein Programm absolut großartig! TV-Präsenz im WDR und ZDF, eigene Radio-Kolumne..."</p>
+                    <div class="border-t w-16 mx-auto border-gray-300 my-4"></div>
+                    <p class="font-bold">- Michael von Kunhardt -</p>
+                    <img src="https://go.hermannscherer.com/hosted/images/1b/f2cfbece264d0fb2f3cc69fca146f1/quote-template-5star-separat_Zeichenflache-1_Zeichenflache-1.png" class="mx-auto w-24 mt-2" alt="5 Stars">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT HERMANN -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center mb-8">Hermann Scherer</h2>
+            <div class="w-24 h-1 bg-gold mx-auto mb-12"></div>
+            
+            <div class="flex flex-col md:flex-row gap-10 items-start">
+                <div class="w-full md:w-1/3">
+                    <img src="https://go.hermannscherer.com/hosted/images/6a/1af5af464348118610cf068ed8f4d9/_SL_9696-2.jpg" class="rounded shadow w-full" alt="Hermann Scherer">
+                    <div class="mt-4 text-center">
+                        <img src="https://www.provenexpert.com/badge/topservice.js?id=1HwZkWGZk9TpmqGB1xwZ3NQp04zZkAQp&w=180&key=tekxryfq" class="hidden"> <!-- Placeholder for badge logic -->
+                        <span class="text-xs text-gray-400">ProvenExpert Badge Platzhalter</span>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Über 3.000 Vorträge vor rund zwei Millionen Menschen in über 3.000 Unternehmen in über 30 Ländern, 60 Bücher in 21 Sprachen, 1.000 Presseveröffentlichungen, 50.000.000 Euro Umsatz... Das ist Hermann Scherer.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Er macht Menschen zu Marken, damit sie das verdienen, was sie wert sind. Niemand hat in D-A-CH mehr Redner und Marken auf die Bühne gebracht als Hermann Scherer.
+                    </p>
+                    
+                    <ul class="space-y-2 font-bold text-gray-800">
+                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 3 Spiegel-Bestseller</li>
+                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 60 veröffentlichte Bücher</li>
+                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 30 Jahre Bühnenerfahrung</li>
+                        <li><i class="fas fa-check text-gray-800 mr-2"></i> 2.000.000 begeisterte Teilnehmer</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Press Logos -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-8">Die Presse über Hermann Scherer</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8 opacity-70 grayscale">
+                    <img src="//go.hermannscherer.com/hosted/images/a8/7c90e46fa74030b5b9b626864f4c20/Neue-Westfalische-Zeitung.jpg" class="h-8">
+                    <img src="https://partner.hermannscherer.com/hosted/images/4e/7718edd7e444d49ce738645c93c563/Nordbayerischer-Kurier.png" class="h-8">
+                    <img src="//go.hermannscherer.com/hosted/images/bf/2d1352eef14843bcef80af81913884/Suddeutsche-Zeitung-Logo.png" class="h-10">
+                    <img src="https://partner.hermannscherer.com/hosted/images/81/36070d03e54a3282c65233c1a24262/Focus.png" class="h-8">
+                    <img src="https://partner.hermannscherer.com/hosted/images/bb/9ff826c3cb40a0b711feec79f671a9/RTL_Logo.png" class="h-8">
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="toggleModal()" class="bg-gold text-white font-bold py-4 px-12 rounded text-xl shadow-lg transition transform hover:scale-105">
+                    Jetzt Platz sichern!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-8 border-t-4 border-blue-600">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
+            <p class="mb-4">
+                <a href="#" class="hover:text-white">Datenschutz</a> · 
+                <a href="#" class="hover:text-white">Impressum</a> · 
+                <a href="#" class="hover:text-white">AGB</a>
+            </p>
+            <p class="mb-4">This site is not a part of the Facebook TM website or Facebook TM Inc.</p>
+            <p class="mb-4">E-Mail: <a href="mailto:info@hermannscherer.com" class="text-white">info@hermannscherer.com</a></p>
+            <p>© 2024 Scherer GmbH & Co. KG</p>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP -->
+    <div id="modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50" onclick="toggleModal()"></div>
+        
+        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto transform transition-all duration-300 scale-95">
+            
+            <!-- Modal Content -->
+            <div class="modal-content py-4 text-left px-6 relative">
+                <!-- Close Button -->
+                <div class="absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-gray-700 text-sm z-50" onclick="toggleModal()">
+                    <i class="fas fa-times text-2xl"></i>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-gray-200 rounded-full h-4 mb-4 mt-6">
+                    <div class="bg-gold h-4 rounded-full text-xs text-white text-center leading-4 font-bold" style="width: 75%">Fast geschafft...</div>
+                </div>
+
+                <h3 class="text-xl font-bold text-center mb-4 leading-tight">
+                    Sichere Dir jetzt Deinen Platz und sei beim<br>
+                    <span class="text-blue-600">LIVE Online-Workshop dabei!</span>
+                </h3>
+
+                <form class="space-y-4">
+                    <div>
+                        <select class="w-full border border-gray-300 p-3 rounded bg-gray-50 focus:outline-none focus:border-blue-500">
+                            <option>Donnerstag, 05. Februar - 19:00 Uhr</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Dein Vorname" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Dein Nachname" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Deine E-Mail Adresse" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                    </div>
+
+                    <p class="text-xs text-gray-500 text-center">
+                        Mit Absendung stimme ich der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.
+                    </p>
+
+                    <button type="button" class="w-full bg-gold text-white font-bold py-3 rounded shadow hover:bg-yellow-600 transition">
+                        Ja, ich will teilnehmen
+                    </button>
+
+                    <p class="text-center text-xs text-gray-400 mt-2">
+                        <i class="fas fa-lock"></i> Deine Daten sind bei uns sicher.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Modal Logic
+        function toggleModal() {
+            const body = document.querySelector('body');
+            const modal = document.querySelector('#modal');
+            const modalContainer = document.querySelector('.modal-container');
+
+            modal.classList.toggle('opacity-0');
+            modal.classList.toggle('pointer-events-none');
+            body.classList.toggle('modal-active');
+
+            if (!modal.classList.contains('opacity-0')) {
+                modalContainer.classList.remove('scale-95');
+                modalContainer.classList.add('scale-100');
+            } else {
+                modalContainer.classList.remove('scale-100');
+                modalContainer.classList.add('scale-95');
+            }
+        }
+
+        // Countdown Logic (set to next Thursday for demo purposes)
+        function startCountdown() {
+            // Set date to 3 days from now for demo
+            const countDownDate = new Date();
+            countDownDate.setDate(countDownDate.getDate() + 3);
+            countDownDate.setHours(19, 0, 0);
+
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = (days < 10 ? "0" : "") + days;
+                document.getElementById("hours").innerHTML = (hours < 10 ? "0" : "") + hours;
+                document.getElementById("minutes").innerHTML = (minutes < 10 ? "0" : "") + minutes;
+                document.getElementById("seconds").innerHTML = (seconds < 10 ? "0" : "") + seconds;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "Gestartet";
+                }
+            }, 1000);
+        }
+
+        startCountdown();
+    </script>
+</body>
+</html>
