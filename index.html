@@ -91,8 +91,9 @@
         </div>
     </header>
 
-    <!-- HERO SECTION MIT HINTERGRUND-PLATZHALTER -->
-    <section class="py-20 md:py-32 relative bg-gray-900 bg-cover bg-center overflow-hidden" style="background-image: url('hero_bg.JPG');">
+    <!-- HERO SECTION MIT OPTIMIERTEM HINTERGRUND -->
+    <!-- pt-48 sorgt auf PC dafür, dass der Kopf unter dem Header beginnt. bg-[center_top] priorisiert den Kopfbereich. -->
+    <section class="relative bg-gray-900 bg-cover bg-[center_top] overflow-hidden min-h-[600px] md:min-h-0 pt-32 pb-20 md:pt-56 md:pb-32" style="background-image: url('hero_bg.JPG');">
         <!-- Dunkles Overlay für bessere Lesbarkeit -->
         <div class="absolute inset-0 bg-black opacity-60"></div>
         
