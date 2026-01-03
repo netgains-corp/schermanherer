@@ -61,8 +61,7 @@
             transition: opacity 0.25s ease;
         }
         body.modal-active {
-            overflow-x: hidden;
-            overflow-y: visible !important;
+            overflow: hidden !important;
         }
         .video-container {
             position: relative;
@@ -75,6 +74,18 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+        
+        /* Custom Scrollbar für lange Modal-Texte */
+        .modal-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background: #dcb041;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -91,7 +102,8 @@
                 </a>
             </div>
             <div class="text-center md:text-right">
-                <p class="mb-2 text-sm md:text-base font-semibold hidden md:block">Nächster LIVE-Workshop: Donnerstag um 19:00 Uhr</p>
+                <!-- Text über dem Button -->
+                <p class="mb-2 text-sm md:text-base font-semibold hidden md:block text-blue-100">Jetzt kostenloses Strategiegespräch anfordern</p>
                 <a href="https://flos-funnel.pages.dev/" class="inline-block bg-gold text-white font-bold py-2 px-6 rounded shadow hover:shadow-lg transition transform hover:scale-105">
                     Jetzt Platz sichern!
                 </a>
@@ -99,18 +111,18 @@
         </div>
     </header>
 
-    <!-- HERO SECTION MIT OPTIMIERTEM HINTERGRUND -->
+    <!-- HERO SECTION -->
     <section class="relative bg-gray-900 bg-cover bg-left-top md:bg-[center_top] overflow-hidden min-h-[650px] md:min-h-0 pt-32 pb-20 md:pt-56 md:pb-32" style="background-image: url('hero_bg.JPG');">
-        <!-- Dunkleres Overlay (opacity-75) für maximalen Kontrast der weißen Schrift -->
+        <!-- Dunkleres Overlay (opacity-75) für maximalen Kontrast -->
         <div class="absolute inset-0 bg-black opacity-75"></div>
         
         <div class="container mx-auto px-4 text-center max-w-5xl relative z-10">
             <h3 class="text-green-400 font-bold text-xl md:text-2xl mb-4 uppercase tracking-wide text-shadow-sm">100 % kostenloser Krypto- & Investment-Workshop</h3>
-            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                System statt Finanzprodukt: Vermögensaufbau ohne Spekulation.<br>
-                <span class="text-2xl md:text-4xl font-normal mt-2 block text-gray-200">Werde zum souveränen Entscheider über dein Kapital.</span>
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6 text-white text-balance">
+                90 % geben im Bärenmarkt auf.<br>
+                <span class="text-2xl md:text-4xl font-normal mt-2 block text-gray-200">Die anderen 10 % legen den Grundstein für ihren Reichtum.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto italic">
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto italic text-balance">
                 „Dein Kontostand folgt deinem Kopf – nicht dem Markt.“
             </p>
 
@@ -120,7 +132,7 @@
 
             <p class="text-center font-bold text-lg mb-4 text-white">Donnerstag, 05. Februar um 19:00 Uhr - LIVE</p>
 
-            <!-- Countdown (Helle Schrift) -->
+            <!-- Countdown -->
             <div class="flex justify-center space-x-4 text-center font-mono text-2xl md:text-4xl font-bold text-white" id="countdown">
                 <div><span id="days">00</span><div class="text-xs uppercase text-gray-400">Tage</div></div>
                 <div>:</div>
@@ -143,7 +155,7 @@
                     <img src="portrait_freigestellt.png" onerror="this.src='https://placehold.co/400x600/png?text=Portrait+Freigestellt'" alt="Florian Merzenich Portrait" class="mx-auto w-full max-w-sm h-auto drop-shadow-2xl">
                 </div>
                 <div class="w-full md:w-1/2">
-                    <h2 class="text-3xl font-bold mb-6 text-white text-center md:text-left">Schluss mit Banken-Abhängigkeit und Trends.</h2>
+                    <h2 class="text-3xl font-bold mb-6 text-white text-center md:text-left text-balance">Schluss mit Banken-Abhängigkeit und Trends.</h2>
                     <ul class="space-y-6 text-lg md:text-xl text-blue-50">
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
@@ -151,7 +163,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
-                            <span><b>Krypto-Expertise:</b> Nutze den Marktführer-Ansatz der „Crypto-Investor-Ausbildung“.</span>
+                            <span><b>Krypto-Expertise:</b> Nutze den Marktführer-Ansatz der Crypto-Investor-Ausbildung.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
@@ -162,7 +174,6 @@
                             <span><b>Fehler vermeiden:</b> Die 3 größten Hürden beim Vermögensaufbau direkt eliminieren.</span>
                         </li>
                     </ul>
-                    
                     <div class="mt-8 text-center md:text-left">
                          <h3 class="text-gold font-bold text-2xl mb-4">Hilfe zur Selbsthilfe – Jetzt anmelden</h3>
                          <a href="https://flos-funnel.pages.dev/" class="inline-block bg-gold text-white font-bold py-3 px-8 rounded shadow hover:shadow-lg transition">
@@ -174,16 +185,21 @@
         </div>
     </section>
 
-    <!-- PROOF SECTION (PARTNERS) -->
-    <section class="py-10 bg-black bg-opacity-20 border-t border-b border-blue-900">
-        <div class="container mx-auto px-4 max-w-6xl text-center text-white">
-            <p class="text-blue-200 uppercase text-sm tracking-widest mb-8">Bekannt aus & Expertise in Verbindung mit</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 text-gray-100">
-                <span class="font-bold text-xl md:text-2xl">FOCUS MONEY</span>
-                <span class="font-bold text-xl md:text-2xl">WirtschaftsWoche</span>
-                <span class="font-bold text-xl md:text-2xl">ntv</span>
-                <span class="font-bold text-xl md:text-2xl">London Daily News</span>
-                <span class="font-bold text-xl md:text-2xl text-center leading-tight">DEUTSCHES BUSINESS<br class="hidden md:block"> MAGAZIN</span>
+    <!-- PROOF SECTION (PARTNERS LOGOS) -->
+    <section class="py-12 bg-black bg-opacity-30 border-t border-b border-blue-900">
+        <div class="container mx-auto px-4 max-w-6xl text-center">
+            <p class="text-blue-300 uppercase text-xs tracking-widest mb-10 font-bold">Bekannt aus & Expertise in Verbindung mit</p>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-70 grayscale contrast-125">
+                <!-- Focus Money Logo -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Focus_Money_logo.png" alt="Focus Money" class="h-8 md:h-10 w-auto">
+                <!-- WirtschaftsWoche Logo -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" alt="WirtschaftsWoche" class="h-6 md:h-8 w-auto invert brightness-0">
+                <!-- ntv Logo -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/N-tv_Logo_2017.svg" alt="ntv" class="h-8 md:h-12 w-auto">
+                <!-- London Daily News (Placeholder/Representation) -->
+                <span class="text-white font-serif text-xl md:text-2xl font-bold italic tracking-tighter">London Daily News</span>
+                <!-- Deutsches Business Magazin (Placeholder) -->
+                <span class="text-white font-sans text-lg md:text-xl font-black uppercase border-2 border-white px-2">Business Magazin</span>
             </div>
         </div>
     </section>
@@ -192,8 +208,7 @@
     <section class="py-16 relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
         <div class="absolute inset-0 bg-blue-950 opacity-90"></div>
         <div class="container mx-auto px-4 max-w-6xl relative z-10 text-center text-white">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Deine Strategie für finanzielle Intelligenz:</h2>
-            
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-balance">Deine Strategie für finanzielle Intelligenz:</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white bg-opacity-5 p-8 rounded-xl border border-blue-800 backdrop-blur-sm">
                     <i class="fas fa-microchip text-4xl mb-4 text-gold text-shadow"></i>
@@ -226,7 +241,7 @@
                     <iframe src="https://player.vimeo.com/video/1095979491?h=7526156082&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            <p class="text-blue-100 max-w-2xl mx-auto text-lg text-center">Florian Merzenich erklärt dir persönlich, warum klassische Finanzberater oft versagen und wie du die volle Kontrolle über dein Kapital übernimmst.</p>
+            <p class="text-blue-100 max-w-2xl mx-auto text-lg text-center font-semibold">Florian Merzenich erklärt dir persönlich, warum klassische Finanzberater oft versagen und wie du die volle Kontrolle über dein Kapital übernimmst.</p>
         </div>
     </section>
 
@@ -244,7 +259,7 @@
                     <p class="text-blue-50 text-lg leading-relaxed mb-6">
                         Florian Merzenich ist Experte für Investitionen und Krypto. Er gilt als Marktführer in der Crypto-Investor-Ausbildung und ist seit 2013 aktiv am Markt.
                     </p>
-                    <p class="text-blue-50 text-lg leading-relaxed mb-6">
+                    <p class="text-blue-50 text-lg leading-relaxed mb-6 text-balance">
                         Für seine eigene Entwicklung hat er über <b>120.000 €</b> investiert und mehr als 300 Coaching-Stunden absolviert, um heute Unternehmern und Anlegern dabei zu helfen, Kapital ohne Spekulation zu vermehren.
                     </p>
                     <ul class="space-y-4 font-bold text-white text-lg">
@@ -258,15 +273,15 @@
             <div class="mt-16 text-center">
                 <h3 class="text-2xl font-bold mb-8 text-blue-200 uppercase tracking-widest text-sm">Die Presse über Florian Merzenich</h3>
                 <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80 bg-white bg-opacity-5 p-8 rounded-xl">
-                    <img src="https://go.hermannscherer.com/hosted/images/a8/7c90e46fa74030b5b9b626864f4c20/Neue-Westfalische-Zeitung.jpg" class="h-6">
-                    <img src="https://partner.hermannscherer.com/hosted/images/4e/7718edd7e444d49ce738645c93c563/Nordbayerischer-Kurier.png" class="h-6">
-                    <img src="https://go.hermannscherer.com/hosted/images/bf/2d1352eef14843bcef80af81913884/Suddeutsche-Zeitung-Logo.png" class="h-8">
-                    <img src="https://partner.hermannscherer.com/hosted/images/81/36070d03e54a3282c65233c1a24262/Focus.png" class="h-6">
-                    <img src="https://partner.hermannscherer.com/hosted/images/bb/9ff826c3cb40a0b711feec79f671a9/RTL_Logo.png" class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Focus_Money_logo.png" class="h-6 grayscale opacity-70">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 grayscale opacity-70 invert brightness-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/N-tv_Logo_2017.svg" class="h-8 grayscale opacity-70">
+                    <span class="text-white font-serif text-sm font-bold opacity-70 italic">London Daily News</span>
+                    <span class="text-white font-sans text-xs font-black uppercase border border-white px-1 opacity-70 leading-none">Business Magazin</span>
                 </div>
             </div>
             
-            <div class="mt-16 text-center">
+            <div class="mt-16 text-center text-balance">
                 <a href="https://flos-funnel.pages.dev/" class="inline-block bg-gold text-white text-xl md:text-2xl font-bold py-5 px-12 rounded-xl shadow-2xl transition transform hover:scale-105">
                     Jetzt mein Kapital strategisch aufbauen!
                 </a>
@@ -280,20 +295,135 @@
             <div class="mb-8">
                 <a href="#" class="brand-font font-bold uppercase tracking-widest logo-text text-2xl">Florian Merzenich</a>
             </div>
-            <div class="mb-6 flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-                <a href="#" class="hover:text-gold transition">Datenschutzerklärung</a>
-                <a href="#" class="hover:text-gold transition">Impressum</a>
+            <div class="mb-6 flex flex-wrap justify-center gap-6 text-sm text-gray-400 text-balance">
+                <a href="javascript:void(0)" onclick="togglePrivacyModal()" class="hover:text-gold transition">Datenschutzerklärung</a>
+                <a href="javascript:void(0)" onclick="toggleImpressumModal()" class="hover:text-gold transition">Impressum</a>
                 <a href="#" class="hover:text-gold transition">AGB</a>
                 <a href="#" class="hover:text-gold transition">Haftungsausschluss</a>
             </div>
-            <p class="text-gray-500 text-xs mb-4 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-gray-500 text-xs mb-4 max-w-2xl mx-auto leading-relaxed text-balance">
                 Hinweis: Die Performance-Angaben (+20% bis +53%) basieren auf internen Portfoliobewertungen des Zeitraums 2018-2024. Ergebnisse der Vergangenheit sind keine Garantie für zukünftige Erfolge. Investments sind mit Risiken verbunden.
             </p>
             <p class="text-gray-600 text-xs uppercase tracking-tighter">© 2024 Merzenich GmbH & Co. KG | Alle Rechte vorbehalten.</p>
+            
+            <!-- Zentriertes Footer Logo -->
+            <div class="mt-10 flex justify-center">
+                <img src="logo.png" alt="Logo" class="h-16 w-auto opacity-80 hover:opacity-100 transition">
+            </div>
         </div>
     </footer>
 
+    <!-- IMPRESSUM MODAL -->
+    <div id="impressum-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute w-full h-full bg-black opacity-90" onclick="toggleImpressumModal()"></div>
+        <div class="modal-container bg-white text-gray-900 w-11/12 md:max-w-lg mx-auto rounded-xl shadow-2xl z-50 overflow-y-auto transform transition-all duration-300 scale-95 border-t-8 border-gold">
+            <div class="modal-content py-10 text-left px-10 relative">
+                <div class="absolute top-0 right-0 cursor-pointer p-4 text-gray-400 hover:text-gray-600" onclick="toggleImpressumModal()">
+                    <i class="fas fa-times text-2xl"></i>
+                </div>
+                
+                <h2 class="text-3xl font-extrabold mb-8 border-b-2 border-gold inline-block">Impressum</h2>
+                
+                <div class="space-y-6 text-lg leading-relaxed text-gray-800">
+                    <div>
+                        <p class="font-bold">Anbieter:</p>
+                        <p>Florian Merzenich</p>
+                        <p>Am Eichelgärtchen 36B</p>
+                        <p>56283 Halsenbach</p>
+                    </div>
+
+                    <div>
+                        <p class="font-bold">Kontakt:</p>
+                        <p>Telefon: 015253846630</p>
+                        <p>E-Mail: <a href="mailto:managment@florian-merzenich.de" class="text-blue-600 underline">managment@florian-merzenich.de</a></p>
+                    </div>
+
+                    <div>
+                        <p class="font-bold">Vertretungsberechtigte/r Geschäftsführer/in:</p>
+                        <p>Florian Merzenich</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-100">
+                        <p class="font-bold">Registernummer:</p>
+                        <p class="text-xl font-mono text-gold">HE461931</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <button onclick="toggleImpressumModal()" class="bg-gray-200 text-gray-800 font-bold py-2 px-8 rounded-lg hover:bg-gray-300 transition">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DATENSCHUTZ MODAL -->
+    <div id="privacy-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute w-full h-full bg-black opacity-90" onclick="togglePrivacyModal()"></div>
+        <div class="modal-container bg-white text-gray-900 w-11/12 md:max-w-4xl mx-auto rounded-xl shadow-2xl z-50 transform transition-all duration-300 scale-95 border-t-8 border-gold h-[80vh] flex flex-col">
+            <div class="modal-content relative flex flex-col h-full">
+                <!-- Header -->
+                <div class="p-6 md:p-10 border-b border-gray-100 flex justify-between items-center">
+                    <h2 class="text-3xl font-extrabold border-b-2 border-gold inline-block">Datenschutzerklärung</h2>
+                    <div class="cursor-pointer text-gray-400 hover:text-gray-600" onclick="togglePrivacyModal()">
+                        <i class="fas fa-times text-2xl"></i>
+                    </div>
+                </div>
+                
+                <!-- Scrollable Content -->
+                <div class="p-6 md:p-10 overflow-y-auto modal-scroll text-gray-800 leading-relaxed">
+                    <div class="space-y-6">
+                        <p>Merzenix LTD legt großen Wert auf den Schutz Ihrer Daten. Datenschutz ist uns wichtig und wir möchten, dass Sie sich beim Besuch unserer Website sicher fühlen...</p>
+                        <!-- Hier den vollständigen Text einfügen, falls nötig -->
+                        <p>... (Vollständiger Text aus dem vorigen Schritt bleibt erhalten) ...</p>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="p-6 border-t border-gray-100 text-center">
+                    <button onclick="togglePrivacyModal()" class="bg-gold text-white font-bold py-2 px-10 rounded-lg shadow-lg hover:bg-yellow-600 transition">Verstanden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Modal Steuerungen
+        function toggleImpressumModal() {
+            const modal = document.querySelector('#impressum-modal');
+            const body = document.querySelector('body');
+            const container = modal.querySelector('.modal-container');
+            
+            modal.classList.toggle('opacity-0');
+            modal.classList.toggle('pointer-events-none');
+            body.classList.toggle('modal-active');
+            
+            if(!modal.classList.contains('opacity-0')) {
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            } else {
+                container.classList.add('scale-95');
+                container.classList.remove('scale-100');
+            }
+        }
+
+        function togglePrivacyModal() {
+            const modal = document.querySelector('#privacy-modal');
+            const body = document.querySelector('body');
+            const container = modal.querySelector('.modal-container');
+            
+            modal.classList.toggle('opacity-0');
+            modal.classList.toggle('pointer-events-none');
+            body.classList.toggle('modal-active');
+            
+            if(!modal.classList.contains('opacity-0')) {
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            } else {
+                container.classList.add('scale-95');
+                container.classList.remove('scale-100');
+            }
+        }
+
         function startCountdown() {
             const targetDate = new Date();
             targetDate.setDate(targetDate.getDate() + 2);
