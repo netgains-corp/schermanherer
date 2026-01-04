@@ -359,23 +359,31 @@
             </div>
 
             <!-- Flying Banners (Marquee) -->
-            <div class="marquee-container w-full mb-16 opacity-100 grayscale-[0%] transition duration-500">
+            <div class="marquee-container w-full mb-16 opacity-100 transition duration-500">
                 <div class="marquee-content flex gap-16 items-center">
-                    <!-- Logos with brightness-0 invert to make them white/monochrome consistent -->
-                    <img src="focus.png" class="h-10 brightness-0 invert" alt="Focus">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 brightness-0 invert" alt="WirtschaftsWoche">
-                    <img src="ntv.jpg" class="h-10 brightness-0 invert mix-blend-screen" alt="n-tv"> <!-- mix-blend-screen hilft bei JPGs mit schwarzem Hintergrund -->
-                    <img src="london.png" class="h-12 brightness-0 invert" alt="London Daily News">
+                    <!-- Logos angepasst: Grayscale als Standard, Farbe bei Hover -->
                     
-                    <span class="text-xl font-bold uppercase border-2 border-white px-2">Business Magazin</span>
+                    <!-- Focus (PNG) - Filter entfernt, da es vermutlich einen Hintergrund hat -->
+                    <img src="focus.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="Focus">
+                    
+                    <!-- WirtschaftsWoche (SVG, Schwarz/Transparent) - Invertiert für dunklen Hintergrund -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
+                    
+                    <!-- n-tv (JPG) - Grayscale, abgerundete Ecken da JPG keine Transparenz hat -->
+                    <img src="ntv.jpg" class="h-10 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100 rounded mix-blend-screen" alt="n-tv">
+                    
+                    <!-- London Daily News (PNG) -->
+                    <img src="london.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="London Daily News">
+                    
+                    <!-- Business Magazin Text -->
+                    <span class="text-xl font-bold uppercase border-2 border-white/30 text-white/80 px-2 py-1">Business Magazin</span>
 
-                    <!-- Duplicate for loop -->
-                    <img src="focus.png" class="h-10 brightness-0 invert" alt="Focus">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 brightness-0 invert" alt="WirtschaftsWoche">
-                    <img src="ntv.jpg" class="h-10 brightness-0 invert mix-blend-screen" alt="n-tv">
-                    <img src="london.png" class="h-12 brightness-0 invert" alt="London Daily News">
-                    
-                    <span class="text-xl font-bold uppercase border-2 border-white px-2">Business Magazin</span>
+                    <!-- Duplicate for loop (Wiederholung) -->
+                    <img src="focus.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="Focus">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
+                    <img src="ntv.jpg" class="h-10 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100 rounded mix-blend-screen" alt="n-tv">
+                    <img src="london.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="London Daily News">
+                    <span class="text-xl font-bold uppercase border-2 border-white/30 text-white/80 px-2 py-1">Business Magazin</span>
                 </div>
             </div>
 
@@ -646,12 +654,121 @@
             <div class="mb-8">
                 <a href="#" class="font-head font-bold uppercase tracking-widest logo-text text-2xl">Florian Merzenich</a>
             </div>
+            <div class="mb-6 flex flex-wrap justify-center gap-8 text-sm text-gray-400 font-semibold">
+                <a href="javascript:void(0)" onclick="togglePrivacyModal()" class="hover:text-gold transition">Datenschutzerklärung</a>
+                <a href="javascript:void(0)" onclick="toggleImpressumModal()" class="hover:text-gold transition">Impressum</a>
+            </div>
+            <p class="text-gray-500 text-xs mb-4 max-w-2xl mx-auto leading-relaxed text-balance">
+                Hinweis: Die Performance-Angaben (+20% bis +53%) basieren auf internen Portfoliobewertungen des Zeitraums 2018-2024. Ergebnisse der Vergangenheit sind keine Garantie für zukünftige Erfolge. Investments sind mit Risiken verbunden.
+            </p>
             <p class="text-gray-600 text-xs uppercase tracking-tighter">© 2025 Florian Merzenich | Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
-    <!-- JS for Music -->
+    <!-- IMPRESSUM MODAL -->
+    <div id="impressum-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute w-full h-full bg-black opacity-90" onclick="toggleImpressumModal()"></div>
+        <div class="modal-container bg-white text-gray-900 w-11/12 md:max-w-lg mx-auto rounded-xl shadow-2xl z-50 overflow-y-auto transform transition-all duration-300 scale-95 border-t-8 border-gold">
+            <div class="modal-content py-10 text-left px-10 relative">
+                <div class="absolute top-0 right-0 cursor-pointer p-4 text-gray-400 hover:text-gray-600" onclick="toggleImpressumModal()">
+                    <i class="fas fa-times text-2xl"></i>
+                </div>
+                
+                <h2 class="text-3xl font-extrabold mb-8 border-b-2 border-gold inline-block">Impressum</h2>
+                
+                <div class="space-y-6 text-lg leading-relaxed text-gray-800">
+                    <div>
+                        <p class="font-bold">Anbieter:</p>
+                        <p>Florian Merzenich</p>
+                        <p>Am Eichelgärtchen 36B</p>
+                        <p>56283 Halsenbach</p>
+                    </div>
+
+                    <div>
+                        <p class="font-bold">Kontakt:</p>
+                        <p>Telefon: 015253846630</p>
+                        <p>E-Mail: <a href="mailto:managment@florian-merzenich.de" class="text-blue-600 underline">managment@florian-merzenich.de</a></p>
+                    </div>
+
+                    <div>
+                        <p class="font-bold">Vertretungsberechtigte/r Geschäftsführer/in:</p>
+                        <p>Florian Merzenich</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-100">
+                        <p class="font-bold">Registernummer:</p>
+                        <p class="text-xl font-mono text-gold uppercase">HE461931</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <button onclick="toggleImpressumModal()" class="bg-gray-200 text-gray-800 font-bold py-2 px-8 rounded-lg hover:bg-gray-300 transition uppercase tracking-widest text-xs">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DATENSCHUTZ MODAL -->
+    <div id="privacy-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute w-full h-full bg-black opacity-90" onclick="togglePrivacyModal()"></div>
+        <div class="modal-container bg-white text-gray-900 w-11/12 md:max-w-4xl mx-auto rounded-xl shadow-2xl z-50 transform transition-all duration-300 scale-95 border-t-8 border-gold h-[80vh] flex flex-col">
+            <div class="modal-content relative flex flex-col h-full">
+                <div class="p-6 md:p-10 border-b border-gray-100 flex justify-between items-center">
+                    <h2 class="text-3xl font-extrabold border-b-2 border-gold inline-block uppercase tracking-tight">Datenschutzerklärung</h2>
+                    <div class="cursor-pointer text-gray-400 hover:text-gray-600" onclick="togglePrivacyModal()">
+                        <i class="fas fa-times text-2xl"></i>
+                    </div>
+                </div>
+                <div class="p-6 md:p-10 overflow-y-auto modal-scroll text-gray-800 leading-relaxed">
+                    <div class="space-y-6 text-balance">
+                        <p>Merzenix LTD legt großen Wert auf den Schutz Ihrer Daten. Datenschutz ist uns wichtig und wir möchten, dass Sie sich beim Besuch unserer Website sicher fühlen...</p>
+                        <h3 class="text-xl font-bold mt-8">Datenerhebung, -nutzung und Weitergabe</h3>
+                        <p>Wir informieren Sie über die Art der gesammelten Informationen auf unserer Website, wie wir sie nutzen und ob wir sie an Dritte weitergeben.</p>
+                        <h4 class="font-bold">Datensicherheit</h4>
+                        <p>Sie haben das Recht, Ihre personenbezogenen Informationen und Daten einzusehen, zu ändern und zu aktualisieren. Wenn Sie Bedenken bezüglich der Datenverwendung haben, können Sie sich gerne an uns wenden.</p>
+                        <p>Der Schutz Ihrer Daten ist uns ein wichtiges Anliegen. Wir ergreifen verschiedene Schutzmaßnahmen, um die Sicherheit Ihrer Daten zu gewährleisten, einschließlich Datenverschlüsselung und sichere Serverstandorte...</p>
+                        <h3 class="text-xl font-bold mt-8">Verantwortlicher</h3>
+                        <p>Verantwortlicher im Sinne der DS-GVO ist:</p>
+                        <p class="font-bold">© 2025 Florian Merzenich</p>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-gray-100 text-center">
+                    <button onclick="togglePrivacyModal()" class="bg-gold text-white font-bold py-2 px-10 rounded-lg shadow-lg hover:bg-yellow-600 transition uppercase tracking-widest text-xs">Verstanden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS for Modals & Music -->
     <script>
+        // Modal Logic
+        function toggleImpressumModal() {
+            const modal = document.querySelector('#impressum-modal');
+            const body = document.querySelector('body');
+            const container = modal.querySelector('.modal-container');
+            modal.classList.toggle('opacity-0');
+            modal.classList.toggle('pointer-events-none');
+            body.classList.toggle('modal-active');
+            if(!modal.classList.contains('opacity-0')) {
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            }
+        }
+
+        function togglePrivacyModal() {
+            const modal = document.querySelector('#privacy-modal');
+            const body = document.querySelector('body');
+            const container = modal.querySelector('.modal-container');
+            modal.classList.toggle('opacity-0');
+            modal.classList.toggle('pointer-events-none');
+            body.classList.toggle('modal-active');
+            if(!modal.classList.contains('opacity-0')) {
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            }
+        }
+
+        // Music Logic
         const bgMusic = document.getElementById("bgMusic");
         bgMusic.volume = 0.3;
 
