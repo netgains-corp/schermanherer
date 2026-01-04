@@ -465,8 +465,10 @@
     </header>
 
     <!-- SECTION 1: HERO (THE HOOK) -->
+    <!-- Padding reduziert (pt-24 / md:pt-32) damit Inhalte höher rutschen -->
+    <!-- Hintergrund-Overlay etwas transparenter gemacht (opacity-70) damit Bild besser durchscheint -->
     <section class="relative bg-dark-gradient bg-cover bg-center pt-24 pb-20 md:pt-32 md:pb-24" style="background-image: url('hero_bg.JPG');">
-        <div class="absolute inset-0 bg-royalDark/90 bg-gradient-to-b from-royalDark/95 to-royal/80"></div>
+        <div class="absolute inset-0 bg-royalDark/70 bg-gradient-to-b from-royalDark/80 to-royal/60"></div>
         <div class="container mx-auto px-4 text-center max-w-4xl relative z-10">
             <p class="text-gold font-bold tracking-[0.2em] uppercase mb-4 text-sm md:text-base animate-pulse">Für Unternehmer & Investoren, die mehr wollen</p>
             <h1 class="text-3xl md:text-5xl lg:text-6xl font-head font-extrabold leading-tight mb-6 text-white uppercase drop-shadow-xl">
@@ -593,14 +595,26 @@
             </div>
 
             <!-- Flying Banners (Marquee) -->
-            <div class="marquee-container w-full mb-16 opacity-100 grayscale-[0%] transition duration-500">
+            <div class="marquee-container w-full mb-16 opacity-100 transition duration-500">
                 <div class="marquee-content flex gap-16 items-center">
+                    <!-- Logos angepasst: Grayscale entfernt, Farben direkt sichtbar -->
+                    
+                    <!-- Focus (PNG) -->
                     <img src="focus.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="Focus">
+                    
+                    <!-- WirtschaftsWoche (SVG, Schwarz/Transparent) - Invertiert für dunklen Hintergrund -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
+                    
+                    <!-- n-tv (JPG) - Normales Bild, optional mix-blend-screen entfernt, wenn Bild nicht schwarz ist -->
                     <img src="ntv.jpg" class="h-10 w-auto object-contain opacity-80 hover:opacity-100 rounded transition" alt="n-tv">
+                    
+                    <!-- London Daily News (PNG) -->
                     <img src="london.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="London Daily News">
+                    
+                    <!-- Business Magazin Text -->
                     <span class="text-xl font-bold uppercase border-2 border-white/30 text-white/80 px-2 py-1">Business Magazin</span>
 
+                    <!-- Duplicate for loop -->
                     <img src="focus.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="Focus">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
                     <img src="ntv.jpg" class="h-10 w-auto object-contain opacity-80 hover:opacity-100 rounded transition" alt="n-tv">
@@ -632,21 +646,25 @@
             <!-- Fachartikel Teaser -->
             <h3 class="text-xl font-bold text-center mb-8 text-white/80">Fachbeiträge & Expertise</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Artikel 1 -->
                 <a href="https://www.guetsel.de/content/104153/warum-mindset-ueber-deinen-kontostand-entscheidet-und-wie-du-es-aenderst.html" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-gold shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-gold uppercase mb-2 block group-hover:text-white transition">Mindset</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-actionBlue transition">Dein Kontostand folgt deinem Kopf <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
                     <p class="text-sm text-gray-400 italic">"Florian Merzenich zeigt, warum dein Denken entscheidender ist als dein Depot und wie du dein finanzielles Mindset neu programmierst."</p>
                 </a>
+                <!-- Artikel 2 -->
                 <a href="https://www.wirtschaftsforum.de/news/pr-profis/liquidationen-am-kryptomarkt-warum-gerade-jetzt-grosse-chancen-ents" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-actionBlue shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-actionBlue uppercase mb-2 block group-hover:text-white transition">Marktanalyse</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-gold transition">Liquidationen am Kryptomarkt <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
                     <p class="text-sm text-gray-400 italic">"Wer versteht, was dahintersteckt, kann genau dann investieren, wenn andere verkaufen. Warum gerade in Panikphasen Vermögen entsteht."</p>
                 </a>
+                <!-- Artikel 3 -->
                 <a href="https://www.londondaily.news/financial-intelligence-the-4-golden-rules-for-long-term-wealth/" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-gold shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-gold uppercase mb-2 block group-hover:text-white transition">Strategie</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-actionBlue transition">Finanzielle Intelligenz <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
                     <p class="text-sm text-gray-400 italic">"Die 4 goldenen Regeln für langfristigen Wohlstand. Unabhängig von Hypes und Marktgeräuschen."</p>
                 </a>
+                <!-- Artikel 4 -->
                 <a href="https://deutsches-business-magazin.de/2025/04/07/die-3-groessten-fehler-beim-vermoegensaufbau-und-wie-du-sie-vermeidest/" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-actionBlue shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-actionBlue uppercase mb-2 block group-hover:text-white transition">Vermeidung</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-gold transition">Die 3 größten Fehler <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
@@ -661,6 +679,7 @@
     <section class="py-20 bg-royal border-t border-white/5 relative overflow-hidden">
         <div class="container mx-auto px-4 max-w-6xl relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Text Content -->
                 <div class="w-full md:w-1/2 order-2 md:order-1">
                     <h2 class="text-3xl md:text-4xl font-head font-bold mb-8 text-white">Wer ist <span class="text-gold">Florian Merzenich?</span></h2>
                     
@@ -687,8 +706,10 @@
                     </div>
                 </div>
 
+                <!-- Image -->
                 <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
                     <div class="relative">
+                        <!-- Glow behind image -->
                         <div class="absolute inset-0 bg-gold/20 rounded-full blur-3xl transform scale-90"></div>
                         <img src="portrait_freigestellt.png" alt="Florian Merzenich Portrait" class="relative z-10 w-full max-w-md drop-shadow-2xl hover:scale-105 transition duration-500">
                     </div>
@@ -703,8 +724,10 @@
             <h2 class="text-3xl md:text-4xl font-head font-bold text-center mb-16">In 3 Schritten zur <span class="text-actionBlue">finanziellen Souveränität</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
                 <div class="hidden md:block absolute top-12 left-0 w-full h-1 bg-white/10 z-0"></div>
 
+                <!-- Step 1 -->
                 <div class="relative z-10 text-center">
                     <div class="w-24 h-24 bg-dark-gradient border-4 border-actionBlue rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon">
                         <span class="text-3xl font-bold text-white">1</span>
@@ -713,6 +736,7 @@
                     <p class="text-gray-400 px-4">Wir analysieren glasklar, wo du stehst und wo du hinwillst. Keine Pauschallösungen.</p>
                 </div>
 
+                <!-- Step 2 -->
                 <div class="relative z-10 text-center">
                     <div class="w-24 h-24 bg-dark-gradient border-4 border-actionBlue rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon">
                         <span class="text-3xl font-bold text-white">2</span>
@@ -721,6 +745,7 @@
                     <p class="text-gray-400 px-4">Wir bauen dein maßgeschneidertes Portfolio: Krypto als Turbo, Edelmetalle zur Sicherung.</p>
                 </div>
 
+                <!-- Step 3 -->
                 <div class="relative z-10 text-center">
                     <div class="w-24 h-24 bg-dark-gradient border-4 border-actionBlue rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon">
                         <span class="text-3xl font-bold text-white">3</span>
@@ -738,6 +763,7 @@
             <h2 class="text-3xl md:text-4xl font-head font-bold text-center mb-16">Ergebnisse <span class="text-gold">lügen nicht</span></h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- WhatsApp Mockups -->
                 <div class="space-y-6">
                     <div class="chat-bubble ml-auto w-4/5 md:w-3/4 shadow-lg transform hover:scale-105 transition">
                         <p class="font-bold text-xs text-green-100 mb-1">Thomas S.</p>
@@ -753,7 +779,9 @@
                     </div>
                 </div>
 
+                <!-- Reviews - Mit Neon Shadow -->
                 <div class="grid grid-cols-1 gap-6">
+                    <!-- Review 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -761,6 +789,7 @@
                         <p class="italic text-gray-700 text-sm mb-4">"Kurz und knapp: Beste Entscheidung 2024. Endlich Ruhe im Depot und ein klarer Plan. Danke Flo!"</p>
                         <p class="font-bold text-xs uppercase tracking-wide text-actionBlue">- Dennis B.</p>
                     </div>
+                    <!-- Review 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -768,6 +797,7 @@
                         <p class="italic text-gray-700 text-sm mb-4">"Ich bin eigentlich sehr vorsichtig... Aber bei Florian merkt man sofort, dass er das schon seit 2013 macht... Er hat mir im Gespräch eine klare Struktur für mein Portfolio gegeben... Kein 'Kauf Coin X und werd reich', sondern echte Strategie."</p>
                         <p class="font-bold text-xs uppercase tracking-wide text-actionBlue">- Elena P.</p>
                     </div>
+                    <!-- Review 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -775,6 +805,7 @@
                         <p class="italic text-gray-700 text-sm mb-4">"Super Typ, sehr direkt. Hat mir extrem geholfen meine Panik in den Griff zu kriegen. Das Coaching ist jeden Cent wert."</p>
                         <p class="font-bold text-xs uppercase tracking-wide text-actionBlue">- Ali C.</p>
                     </div>
+                    <!-- Review 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -791,6 +822,7 @@
     <section class="py-20 bg-royal-gradient border-y border-gold/30">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-neon">
+                <!-- Background Glow -->
                 <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
                 
                 <h2 class="text-3xl font-head font-bold text-center mb-10">Was du im kostenlosen Strategiegespräch bekommst:</h2>
