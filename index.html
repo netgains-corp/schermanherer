@@ -29,6 +29,7 @@
                         goldHover: '#b39b56',
                         actionBlue: '#00ACF0',
                         actionBlueHover: '#008ecb',
+                        peOrange: '#FF9700', /* ProvenExpert Farbe */
                     },
                     fontFamily: {
                         sans: ['Open Sans', 'sans-serif'],
@@ -134,6 +135,42 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 172, 240, 0); }
         }
 
+        /* ProvenExpert Badge Style */
+        .pe-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9998;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid #FF9700;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+        .pe-badge:hover {
+            transform: translateY(-5px);
+        }
+        .pe-logo-circle {
+            width: 40px;
+            height: 40px;
+            background: #f4f4f4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pe-logo-circle i {
+            color: #FF9700;
+            font-size: 20px;
+        }
+
         /* Modal Styles */
         .modal { transition: opacity 0.25s ease; }
         body.modal-active { overflow: hidden !important; }
@@ -149,13 +186,30 @@
 </head>
 <body class="modal-active-none bg-royal text-white font-sans antialiased">
 
-    <!-- MUSIC TOGGLE (FIXED) -->
+    <!-- MUSIC TOGGLE (FIXED LEFT) -->
     <button class="music-toggle" id="musicBtn" onclick="toggleMusic()" title="Hintergrundmusik an/aus">
         <i class="fas fa-music"></i>
     </button>
     <audio id="bgMusic" loop preload="auto">
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- PROVENEXPERT BADGE (FIXED RIGHT) -->
+    <a href="https://www.provenexpert.com/florian-merzenich2/" target="_blank" class="pe-badge">
+        <div class="pe-logo-circle">
+            <i class="fas fa-check"></i>
+        </div>
+        <div>
+            <div class="flex items-center gap-1 text-peOrange text-xs mb-0.5">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span class="text-gray-800 font-bold ml-1">5.00</span>
+            </div>
+            <div class="text-xs text-gray-600 font-semibold leading-tight">
+                SEHR GUT <span class="text-gray-400 font-normal">| 50 Bewertungen</span>
+            </div>
+            <div class="text-[10px] text-gray-400 mt-0.5" id="peDate">Stand: 01.01.2025</div>
+        </div>
+    </a>
 
     <!-- HEADER -->
     <header class="bg-black/80 backdrop-blur-md py-4 sticky top-0 z-40 border-b border-white/10">
@@ -305,18 +359,22 @@
             </div>
 
             <!-- Flying Banners (Marquee) -->
-            <div class="marquee-container w-full mb-16 opacity-70 grayscale hover:grayscale-0 transition duration-500">
+            <div class="marquee-container w-full mb-16 opacity-100 grayscale-[0%] transition duration-500">
                 <div class="marquee-content flex gap-16 items-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Focus_Money_logo.png" class="h-8">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 invert brightness-0">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/N-tv_Logo_2017.svg" class="h-8">
-                    <span class="text-xl font-serif font-bold text-white">London Daily News</span>
+                    <!-- Logos with brightness-0 invert to make them white/monochrome consistent -->
+                    <img src="focus.png" class="h-10 brightness-0 invert" alt="Focus">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 brightness-0 invert" alt="WirtschaftsWoche">
+                    <img src="ntv.jpg" class="h-10 brightness-0 invert mix-blend-screen" alt="n-tv"> <!-- mix-blend-screen hilft bei JPGs mit schwarzem Hintergrund -->
+                    <img src="london.png" class="h-12 brightness-0 invert" alt="London Daily News">
+                    
                     <span class="text-xl font-bold uppercase border-2 border-white px-2">Business Magazin</span>
-                    <!-- Duplicate -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Focus_Money_logo.png" class="h-8">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 invert brightness-0">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/N-tv_Logo_2017.svg" class="h-8">
-                    <span class="text-xl font-serif font-bold text-white">London Daily News</span>
+
+                    <!-- Duplicate for loop -->
+                    <img src="focus.png" class="h-10 brightness-0 invert" alt="Focus">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 brightness-0 invert" alt="WirtschaftsWoche">
+                    <img src="ntv.jpg" class="h-10 brightness-0 invert mix-blend-screen" alt="n-tv">
+                    <img src="london.png" class="h-12 brightness-0 invert" alt="London Daily News">
+                    
                     <span class="text-xl font-bold uppercase border-2 border-white px-2">Business Magazin</span>
                 </div>
             </div>
@@ -382,22 +440,22 @@
                     <h2 class="text-3xl md:text-4xl font-head font-bold mb-8 text-white">Wer ist <span class="text-gold">Florian Merzenich?</span></h2>
                     
                     <div class="space-y-6 text-lg text-gray-300">
-                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-actionBlue hover:bg-white/10 transition">
+                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-actionBlue hover:bg-white/10 transition shadow-neon hover:shadow-neon-hover">
                             <h4 class="text-white font-bold mb-2 flex items-center"><i class="fas fa-certificate text-actionBlue mr-3"></i> Expertenstatus</h4>
                             <p class="text-sm md:text-base m-0">Experte für Investitionen & Krypto, Mitgründer von „Usecape“.</p>
                         </div>
 
-                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-gold hover:bg-white/10 transition">
+                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-gold hover:bg-white/10 transition shadow-neon hover:shadow-neon-hover">
                             <h4 class="text-white font-bold mb-2 flex items-center"><i class="fas fa-history text-gold mr-3"></i> Erfahrung</h4>
                             <p class="text-sm md:text-base m-0">Seit 2013 als Investor aktiv. Über 120.000 € in eigene Persönlichkeitsentwicklung investiert.</p>
                         </div>
 
-                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-actionBlue hover:bg-white/10 transition">
+                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-actionBlue hover:bg-white/10 transition shadow-neon hover:shadow-neon-hover">
                             <h4 class="text-white font-bold mb-2 flex items-center"><i class="fas fa-chess-knight text-actionBlue mr-3"></i> Ansatz</h4>
                             <p class="text-sm md:text-base m-0">Strategischer Vermögensaufbau ohne Spekulation. Hilfe zur Selbsthilfe für Unternehmer & Privatanleger.</p>
                         </div>
 
-                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-gold hover:bg-white/10 transition">
+                        <div class="bg-white/5 p-6 rounded-lg border-l-4 border-gold hover:bg-white/10 transition shadow-neon hover:shadow-neon-hover">
                             <h4 class="text-white font-bold mb-2 flex items-center"><i class="fas fa-microphone text-gold mr-3"></i> Medien</h4>
                             <p class="text-sm md:text-base m-0">Host eines eigenen Podcasts. Bekannt aus Focus Money, WirtschaftsWoche, ntv und Harvest.</p>
                         </div>
@@ -592,209 +650,38 @@
         </div>
     </footer>
 
-    <!-- FUNNEL SCRIPT -->
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <!-- JS for Music -->
     <script>
-        // --- KONFIGURATION ---
-        const N8N_WEBHOOK_URL = 'https://n8n.srv1164949.hstgr.cloud/webhook/c775ebbb-3997-4d31-8d2c-f7a74bf9bf04'; 
-        const CALENDLY_LINK = 'https://calendly.com/f-merzenich/60min';
-
-        let currentStep = 1;
-        const totalSteps = 5; 
-        let isMusicPlaying = false;
         const bgMusic = document.getElementById("bgMusic");
         bgMusic.volume = 0.3;
 
-        // Versuche Autoplay beim Laden
         document.addEventListener('DOMContentLoaded', function() {
             const btn = document.getElementById("musicBtn");
             const playPromise = bgMusic.play();
-            
             if (playPromise !== undefined) {
                 playPromise.then(_ => {
-                    isMusicPlaying = true;
                     btn.classList.add("playing");
-                })
-                .catch(error => {
-                    console.log("Autoplay prevented by browser policy.");
-                    isMusicPlaying = false;
-                    btn.classList.remove("playing");
-                    btn.style.opacity = "0.5";
+                }).catch(error => {
+                    console.log("Autoplay prevented.");
                 });
             }
+            
+            // Set current date in PE badge
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('de-DE');
+            document.getElementById('peDate').innerText = 'Stand: ' + dateStr;
         });
 
         function toggleMusic() {
             const btn = document.getElementById("musicBtn");
-            
-            if (isMusicPlaying) {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                btn.classList.add("playing");
+            } else {
                 bgMusic.pause();
-                isMusicPlaying = false;
                 btn.classList.remove("playing");
-                btn.style.opacity = "0.5";
-            } else {
-                bgMusic.play().then(() => {
-                    isMusicPlaying = true;
-                    btn.classList.add("playing");
-                    btn.style.opacity = "1";
-                }).catch(e => { console.log("Error playing music:", e); });
             }
         }
-
-        function updateProgress() {
-            const displayPercentage = currentStep === totalSteps ? 100 : ((currentStep - 1) / (totalSteps - 1)) * 100;
-            document.getElementById('progressFill').style.width = displayPercentage + '%';
-            if(currentStep === totalSteps) {
-                document.getElementById('funnelHeader').querySelector('h2').innerText = "Termin buchen";
-            }
-        }
-
-        function selectRadio(cardElement, groupName) {
-            const input = cardElement.querySelector('input');
-            input.checked = true;
-            const allCards = document.querySelectorAll(`input[name="${groupName}"]`);
-            allCards.forEach(rb => { rb.closest('.option-card').classList.remove('selected'); });
-            cardElement.classList.add('selected');
-            setTimeout(() => {
-                 const stepDiv = cardElement.closest('.step');
-                 const stepNum = parseInt(stepDiv.getAttribute('data-step'));
-                 if(stepNum < 4) nextStep(stepNum + 1); 
-            }, 300);
-        }
-
-        function toggleCheckbox(cardElement) {
-            const input = cardElement.querySelector('input');
-            input.checked = !input.checked;
-            if(input.checked) {
-                cardElement.classList.add('selected');
-                if (input.value === 'Keine') {
-                    document.querySelectorAll('input[name="erfahrung"]:not([value="Keine"])').forEach(cb => {
-                        cb.checked = false;
-                        cb.closest('.option-card').classList.remove('selected');
-                    });
-                } else {
-                    const noneInput = document.querySelector('input[name="erfahrung"][value="Keine"]');
-                    if (noneInput && noneInput.checked) {
-                        noneInput.checked = false;
-                        noneInput.closest('.option-card').classList.remove('selected');
-                    }
-                }
-            } else {
-                cardElement.classList.remove('selected');
-            }
-        }
-
-        document.querySelectorAll('.option-input').forEach(input => {
-            input.addEventListener('click', (e) => e.stopPropagation());
-            input.addEventListener('change', (e) => {
-                const card = e.target.closest('.option-card');
-                if(e.target.type === 'radio') {
-                    const group = e.target.name;
-                    document.querySelectorAll(`input[name="${group}"]`).forEach(rb => {
-                        rb.closest('.option-card').classList.remove('selected');
-                    });
-                    card.classList.add('selected');
-                    setTimeout(() => {
-                        const stepDiv = card.closest('.step');
-                        const stepNum = parseInt(stepDiv.getAttribute('data-step'));
-                        if(stepNum < 4) nextStep(stepNum + 1);
-                   }, 300);
-                } else {
-                    if(e.target.checked) card.classList.add('selected');
-                    else card.classList.remove('selected');
-                    if (e.target.checked && e.target.value === 'Keine') {
-                         document.querySelectorAll('input[name="erfahrung"]:not([value="Keine"])').forEach(cb => {
-                            cb.checked = false;
-                            cb.closest('.option-card').classList.remove('selected');
-                        });
-                    } else if (e.target.checked && e.target.value !== 'Keine') {
-                        const noneInput = document.querySelector('input[name="erfahrung"][value="Keine"]');
-                        if (noneInput && noneInput.checked) {
-                            noneInput.checked = false;
-                            noneInput.closest('.option-card').classList.remove('selected');
-                        }
-                    }
-                }
-            });
-        });
-
-        function nextStep(targetStep) {
-            if(currentStep === 1) {
-                const selected = document.querySelectorAll('input[name="erfahrung"]:checked');
-                if(selected.length === 0) { alert("Bitte wähle mindestens eine Option aus."); return; }
-            }
-            if(currentStep === 2) {
-                const salary = document.querySelector('input[name="gehalt"]:checked');
-                if(!salary) { alert("Bitte wähle eine Einkommensstufe aus."); return; }
-            }
-            if(currentStep === 3) {
-                const capital = document.querySelector('input[name="kapital"]:checked');
-                if(!capital) { alert("Bitte wähle dein Kapital aus."); return; }
-            }
-            document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
-            document.querySelector(`.step[data-step="${targetStep}"]`).classList.add('active');
-            currentStep = targetStep;
-            updateProgress();
-        }
-
-        function prevStep(targetStep) {
-            document.querySelector(`.step[data-step="${currentStep}"]`).classList.remove('active');
-            document.querySelector(`.step[data-step="${targetStep}"]`).classList.add('active');
-            currentStep = targetStep;
-            updateProgress();
-        }
-
-        async function submitForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            if(!name || !email || !phone) { alert("Bitte fülle alle Kontaktfelder aus."); return; }
-
-            const btn = document.getElementById('submitBtn');
-            const loader = document.getElementById('loadingIndicator');
-            btn.classList.add('hidden');
-            loader.classList.remove('hidden');
-
-            const erfahrungen = Array.from(document.querySelectorAll('input[name="erfahrung"]:checked')).map(cb => cb.value).join(', ');
-            const formData = {
-                erfahrung: erfahrungen,
-                gehalt: document.querySelector('input[name="gehalt"]:checked')?.value,
-                kapital: document.querySelector('input[name="kapital"]:checked')?.value,
-                name: name,
-                email: email,
-                phone: phone,
-                source: 'webseite_funnel_v2',
-                date: new Date().toISOString()
-            };
-
-            try {
-                const response = await fetch(N8N_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-                if (response.ok) { console.log("Daten erfolgreich an n8n gesendet"); } 
-                else { console.warn("n8n hat mit Fehler geantwortet:", response.status); }
-
-                await new Promise(r => setTimeout(r, 1000));
-                showCalendly(name, email);
-            } catch (error) {
-                console.error("Fehler beim Senden:", error);
-                showCalendly(name, email);
-            }
-        }
-
-        function showCalendly(name, email) {
-            document.getElementById('funnelContainer').classList.add('wide-mode');
-            nextStep(5);
-            Calendly.initInlineWidget({
-                url: CALENDLY_LINK,
-                parentElement: document.getElementById('calendly-embed'),
-                prefill: { name: name, email: email },
-                utm: {}
-            });
-        }
-        updateProgress();
     </script>
 </body>
 </html>
