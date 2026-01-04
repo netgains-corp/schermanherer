@@ -361,28 +361,28 @@
             <!-- Flying Banners (Marquee) -->
             <div class="marquee-container w-full mb-16 opacity-100 transition duration-500">
                 <div class="marquee-content flex gap-16 items-center">
-                    <!-- Logos angepasst: Grayscale als Standard, Farbe bei Hover -->
+                    <!-- Logos angepasst: Grayscale entfernt, Farben direkt sichtbar -->
                     
-                    <!-- Focus (PNG) - Filter entfernt, da es vermutlich einen Hintergrund hat -->
-                    <img src="focus.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="Focus">
+                    <!-- Focus (PNG) -->
+                    <img src="focus.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="Focus">
                     
                     <!-- WirtschaftsWoche (SVG, Schwarz/Transparent) - Invertiert für dunklen Hintergrund -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
                     
-                    <!-- n-tv (JPG) - Grayscale, abgerundete Ecken da JPG keine Transparenz hat -->
-                    <img src="ntv.jpg" class="h-10 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100 rounded mix-blend-screen" alt="n-tv">
+                    <!-- n-tv (JPG) - Normales Bild, optional mix-blend-screen entfernt, wenn Bild nicht schwarz ist -->
+                    <img src="ntv.jpg" class="h-10 w-auto object-contain opacity-80 hover:opacity-100 rounded transition" alt="n-tv">
                     
                     <!-- London Daily News (PNG) -->
-                    <img src="london.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="London Daily News">
+                    <img src="london.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="London Daily News">
                     
                     <!-- Business Magazin Text -->
                     <span class="text-xl font-bold uppercase border-2 border-white/30 text-white/80 px-2 py-1">Business Magazin</span>
 
-                    <!-- Duplicate for loop (Wiederholung) -->
-                    <img src="focus.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="Focus">
+                    <!-- Duplicate for loop -->
+                    <img src="focus.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="Focus">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
-                    <img src="ntv.jpg" class="h-10 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100 rounded mix-blend-screen" alt="n-tv">
-                    <img src="london.png" class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" alt="London Daily News">
+                    <img src="ntv.jpg" class="h-10 w-auto object-contain opacity-80 hover:opacity-100 rounded transition" alt="n-tv">
+                    <img src="london.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="London Daily News">
                     <span class="text-xl font-bold uppercase border-2 border-white/30 text-white/80 px-2 py-1">Business Magazin</span>
                 </div>
             </div>
