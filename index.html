@@ -22,14 +22,15 @@
             theme: {
                 extend: {
                     colors: {
-                        royal: '#10103D',
-                        royalLight: '#1A1A5E', /* Hellerer Verlaufston */
-                        royalDark: '#0b0b2e',
+                        /* Farben etwas aufgehellt */
+                        royal: '#15154E',     /* War: #10103D */
+                        royalLight: '#252570', /* War: #1A1A5E */
+                        royalDark: '#10103A',  /* War: #0b0b2e */
                         gold: '#CBB26A',
                         goldHover: '#b39b56',
                         actionBlue: '#00ACF0',
                         actionBlueHover: '#008ecb',
-                        peOrange: '#FF9700', /* ProvenExpert Farbe */
+                        peOrange: '#FF9700',
                     },
                     fontFamily: {
                         sans: ['Open Sans', 'sans-serif'],
@@ -46,8 +47,8 @@
 
     <style>
         body {
-            /* Grund-Hintergrund als Gradient */
-            background: linear-gradient(180deg, #0b0b2e 0%, #10103D 100%);
+            /* Grund-Hintergrund als Gradient - Helleres Blau */
+            background: linear-gradient(135deg, #2A2A70 0%, #15154E 100%);
             color: white;
             overflow-x: hidden;
         }
@@ -175,13 +176,247 @@
         .modal { transition: opacity 0.25s ease; }
         body.modal-active { overflow: hidden !important; }
         
-        /* Gradient Background Helper */
+        /* Gradient Background Helper - AUFGEHELLT */
         .bg-royal-gradient {
-            background: linear-gradient(135deg, #10103D 0%, #202060 100%);
+            background: linear-gradient(135deg, #15154E 0%, #252570 100%);
         }
         .bg-dark-gradient {
-            background: linear-gradient(135deg, #0b0b2e 0%, #151540 100%);
+            background: linear-gradient(135deg, #10103A 0%, #1A1A60 100%);
         }
+
+        /* --- Styles basierend auf Florians CI (Dark Mode Edition) - FUNNEL AUFGEHELLT --- */
+        :root {
+            --color-dark: #15154E;   /* Helleres Königsblau */
+            --color-card-bg: #10103A; /* Helleres Dunkelblau */
+            --color-primary: #00ACF0;
+            --color-primary-glow: rgba(0, 172, 240, 0.6);
+            --color-gold: #CBB26A;
+            --color-text: #FFFFFF;
+            --color-text-muted: #B0B0C0;
+            --color-border: #2a2a6a;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        .funnel-container {
+            background: var(--color-card-bg);
+            width: 100%;
+            max-width: 600px;
+            border-radius: 16px;
+            box-shadow: 0 0 80px 10px var(--color-primary-glow);
+            border: 1px solid rgba(0, 172, 240, 0.3);
+            overflow: hidden;
+            position: relative;
+            transition: max-width 0.5s ease;
+        }
+
+        .funnel-container.wide-mode {
+            max-width: 1000px;
+        }
+
+        .header {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 25px 20px 15px;
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+            position: relative; 
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--color-primary);
+            width: 0%;
+            transition: width 0.4s ease;
+            box-shadow: 0 0 10px var(--color-primary);
+        }
+
+        .step {
+            display: none;
+            padding: 40px 30px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .step-calendar {
+            padding: 0;
+            background: white; 
+            height: 650px;
+        }
+
+        h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.4;
+            color: var(--color-text);
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-card {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .option-card:hover {
+            border-color: var(--color-primary);
+            background-color: rgba(0, 172, 240, 0.1);
+            transform: translateX(5px);
+        }
+
+        .option-card.selected {
+            border-color: var(--color-primary);
+            background-color: rgba(0, 172, 240, 0.15);
+            box-shadow: 0 0 15px rgba(0, 172, 240, 0.2) inset;
+        }
+
+        .option-input {
+            margin-right: 15px;
+            accent-color: var(--color-primary);
+            transform: scale(1.3);
+            cursor: pointer;
+        }
+
+        .option-label {
+            font-weight: 500;
+            width: 100%;
+            pointer-events: none;
+            font-size: 1.05rem;
+            color: var(--color-text);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            font-family: inherit;
+            background-color: rgba(255, 255, 255, 0.05); 
+            color: var(--color-text);
+            transition: all 0.3s;
+        }
+
+        .text-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .text-input:focus {
+            border-color: var(--color-primary);
+            background-color: rgba(0, 172, 240, 0.05);
+            outline: none;
+            box-shadow: 0 0 15px rgba(0, 172, 240, 0.2);
+        }
+
+        .btn-container {
+            margin-top: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-next {
+            background-color: var(--color-primary);
+            color: white;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 172, 240, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-next:hover {
+            background-color: #33bfff;
+            box-shadow: 0 0 30px rgba(0, 172, 240, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: var(--color-text-muted);
+            padding-left: 0;
+            text-transform: none;
+            font-weight: 600;
+        }
+
+        .btn-back:hover {
+            color: var(--color-text);
+        }
+
+        .hidden { display: none; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--color-primary);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
     </style>
 </head>
 <body class="modal-active-none bg-royal text-white font-sans antialiased">
@@ -230,7 +465,6 @@
     </header>
 
     <!-- SECTION 1: HERO (THE HOOK) -->
-    <!-- Padding reduziert (pt-24 / md:pt-32) damit Inhalte höher rutschen -->
     <section class="relative bg-dark-gradient bg-cover bg-center pt-24 pb-20 md:pt-32 md:pb-24" style="background-image: url('hero_bg.JPG');">
         <div class="absolute inset-0 bg-royalDark/90 bg-gradient-to-b from-royalDark/95 to-royal/80"></div>
         <div class="container mx-auto px-4 text-center max-w-4xl relative z-10">
@@ -263,7 +497,7 @@
             <h2 class="text-3xl md:text-4xl font-head font-bold text-center mb-16 text-white">Hand aufs Herz: <span class="text-actionBlue">Erkennst du dich wieder?</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Pain Point 1 - Mit Neon Shadow -->
+                <!-- Pain Point 1 -->
                 <div class="bg-white/5 p-8 rounded-xl border border-white/10 shadow-neon hover:shadow-neon-hover transition duration-300 group">
                     <div class="w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition">
                         <i class="fas fa-arrow-trend-down text-2xl text-red-500"></i>
@@ -359,26 +593,14 @@
             </div>
 
             <!-- Flying Banners (Marquee) -->
-            <div class="marquee-container w-full mb-16 opacity-100 transition duration-500">
+            <div class="marquee-container w-full mb-16 opacity-100 grayscale-[0%] transition duration-500">
                 <div class="marquee-content flex gap-16 items-center">
-                    <!-- Logos angepasst: Grayscale entfernt, Farben direkt sichtbar -->
-                    
-                    <!-- Focus (PNG) -->
                     <img src="focus.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="Focus">
-                    
-                    <!-- WirtschaftsWoche (SVG, Schwarz/Transparent) - Invertiert für dunklen Hintergrund -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
-                    
-                    <!-- n-tv (JPG) - Normales Bild, optional mix-blend-screen entfernt, wenn Bild nicht schwarz ist -->
                     <img src="ntv.jpg" class="h-10 w-auto object-contain opacity-80 hover:opacity-100 rounded transition" alt="n-tv">
-                    
-                    <!-- London Daily News (PNG) -->
                     <img src="london.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="London Daily News">
-                    
-                    <!-- Business Magazin Text -->
                     <span class="text-xl font-bold uppercase border-2 border-white/30 text-white/80 px-2 py-1">Business Magazin</span>
 
-                    <!-- Duplicate for loop -->
                     <img src="focus.png" class="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition" alt="Focus">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Wirtschaftswoche_Logo.svg" class="h-6 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition" alt="WirtschaftsWoche">
                     <img src="ntv.jpg" class="h-10 w-auto object-contain opacity-80 hover:opacity-100 rounded transition" alt="n-tv">
@@ -410,25 +632,21 @@
             <!-- Fachartikel Teaser -->
             <h3 class="text-xl font-bold text-center mb-8 text-white/80">Fachbeiträge & Expertise</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Artikel 1 -->
                 <a href="https://www.guetsel.de/content/104153/warum-mindset-ueber-deinen-kontostand-entscheidet-und-wie-du-es-aenderst.html" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-gold shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-gold uppercase mb-2 block group-hover:text-white transition">Mindset</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-actionBlue transition">Dein Kontostand folgt deinem Kopf <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
                     <p class="text-sm text-gray-400 italic">"Florian Merzenich zeigt, warum dein Denken entscheidender ist als dein Depot und wie du dein finanzielles Mindset neu programmierst."</p>
                 </a>
-                <!-- Artikel 2 -->
                 <a href="https://www.wirtschaftsforum.de/news/pr-profis/liquidationen-am-kryptomarkt-warum-gerade-jetzt-grosse-chancen-ents" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-actionBlue shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-actionBlue uppercase mb-2 block group-hover:text-white transition">Marktanalyse</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-gold transition">Liquidationen am Kryptomarkt <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
                     <p class="text-sm text-gray-400 italic">"Wer versteht, was dahintersteckt, kann genau dann investieren, wenn andere verkaufen. Warum gerade in Panikphasen Vermögen entsteht."</p>
                 </a>
-                <!-- Artikel 3 -->
                 <a href="https://www.londondaily.news/financial-intelligence-the-4-golden-rules-for-long-term-wealth/" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-gold shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-gold uppercase mb-2 block group-hover:text-white transition">Strategie</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-actionBlue transition">Finanzielle Intelligenz <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
                     <p class="text-sm text-gray-400 italic">"Die 4 goldenen Regeln für langfristigen Wohlstand. Unabhängig von Hypes und Marktgeräuschen."</p>
                 </a>
-                <!-- Artikel 4 -->
                 <a href="https://deutsches-business-magazin.de/2025/04/07/die-3-groessten-fehler-beim-vermoegensaufbau-und-wie-du-sie-vermeidest/" target="_blank" class="bg-royal-gradient p-6 rounded-lg border-l-4 border-actionBlue shadow-lg hover:shadow-neon transition block group">
                     <span class="text-xs font-bold text-actionBlue uppercase mb-2 block group-hover:text-white transition">Vermeidung</span>
                     <h4 class="text-lg font-bold mb-2 group-hover:text-gold transition">Die 3 größten Fehler <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></h4>
@@ -443,7 +661,6 @@
     <section class="py-20 bg-royal border-t border-white/5 relative overflow-hidden">
         <div class="container mx-auto px-4 max-w-6xl relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <!-- Text Content -->
                 <div class="w-full md:w-1/2 order-2 md:order-1">
                     <h2 class="text-3xl md:text-4xl font-head font-bold mb-8 text-white">Wer ist <span class="text-gold">Florian Merzenich?</span></h2>
                     
@@ -470,10 +687,8 @@
                     </div>
                 </div>
 
-                <!-- Image -->
                 <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
                     <div class="relative">
-                        <!-- Glow behind image -->
                         <div class="absolute inset-0 bg-gold/20 rounded-full blur-3xl transform scale-90"></div>
                         <img src="portrait_freigestellt.png" alt="Florian Merzenich Portrait" class="relative z-10 w-full max-w-md drop-shadow-2xl hover:scale-105 transition duration-500">
                     </div>
@@ -488,10 +703,8 @@
             <h2 class="text-3xl md:text-4xl font-head font-bold text-center mb-16">In 3 Schritten zur <span class="text-actionBlue">finanziellen Souveränität</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                <!-- Connecting Line (Desktop) -->
                 <div class="hidden md:block absolute top-12 left-0 w-full h-1 bg-white/10 z-0"></div>
 
-                <!-- Step 1 -->
                 <div class="relative z-10 text-center">
                     <div class="w-24 h-24 bg-dark-gradient border-4 border-actionBlue rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon">
                         <span class="text-3xl font-bold text-white">1</span>
@@ -500,7 +713,6 @@
                     <p class="text-gray-400 px-4">Wir analysieren glasklar, wo du stehst und wo du hinwillst. Keine Pauschallösungen.</p>
                 </div>
 
-                <!-- Step 2 -->
                 <div class="relative z-10 text-center">
                     <div class="w-24 h-24 bg-dark-gradient border-4 border-actionBlue rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon">
                         <span class="text-3xl font-bold text-white">2</span>
@@ -509,7 +721,6 @@
                     <p class="text-gray-400 px-4">Wir bauen dein maßgeschneidertes Portfolio: Krypto als Turbo, Edelmetalle zur Sicherung.</p>
                 </div>
 
-                <!-- Step 3 -->
                 <div class="relative z-10 text-center">
                     <div class="w-24 h-24 bg-dark-gradient border-4 border-actionBlue rounded-full flex items-center justify-center mx-auto mb-6 shadow-neon">
                         <span class="text-3xl font-bold text-white">3</span>
@@ -527,7 +738,6 @@
             <h2 class="text-3xl md:text-4xl font-head font-bold text-center mb-16">Ergebnisse <span class="text-gold">lügen nicht</span></h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <!-- WhatsApp Mockups -->
                 <div class="space-y-6">
                     <div class="chat-bubble ml-auto w-4/5 md:w-3/4 shadow-lg transform hover:scale-105 transition">
                         <p class="font-bold text-xs text-green-100 mb-1">Thomas S.</p>
@@ -543,9 +753,7 @@
                     </div>
                 </div>
 
-                <!-- Reviews - Mit Neon Shadow -->
                 <div class="grid grid-cols-1 gap-6">
-                    <!-- Review 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -553,7 +761,6 @@
                         <p class="italic text-gray-700 text-sm mb-4">"Kurz und knapp: Beste Entscheidung 2024. Endlich Ruhe im Depot und ein klarer Plan. Danke Flo!"</p>
                         <p class="font-bold text-xs uppercase tracking-wide text-actionBlue">- Dennis B.</p>
                     </div>
-                    <!-- Review 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -561,7 +768,6 @@
                         <p class="italic text-gray-700 text-sm mb-4">"Ich bin eigentlich sehr vorsichtig... Aber bei Florian merkt man sofort, dass er das schon seit 2013 macht... Er hat mir im Gespräch eine klare Struktur für mein Portfolio gegeben... Kein 'Kauf Coin X und werd reich', sondern echte Strategie."</p>
                         <p class="font-bold text-xs uppercase tracking-wide text-actionBlue">- Elena P.</p>
                     </div>
-                    <!-- Review 3 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -569,7 +775,6 @@
                         <p class="italic text-gray-700 text-sm mb-4">"Super Typ, sehr direkt. Hat mir extrem geholfen meine Panik in den Griff zu kriegen. Das Coaching ist jeden Cent wert."</p>
                         <p class="font-bold text-xs uppercase tracking-wide text-actionBlue">- Ali C.</p>
                     </div>
-                    <!-- Review 4 -->
                     <div class="bg-white p-6 rounded-lg shadow-neon hover:shadow-neon-hover text-gray-900 transition duration-300">
                         <div class="flex text-gold mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -586,7 +791,6 @@
     <section class="py-20 bg-royal-gradient border-y border-gold/30">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-neon">
-                <!-- Background Glow -->
                 <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
                 
                 <h2 class="text-3xl font-head font-bold text-center mb-10">Was du im kostenlosen Strategiegespräch bekommst:</h2>
@@ -602,7 +806,7 @@
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-check-square text-green-500 text-2xl mr-4 shadow-[0_0_10px_rgba(34,197,94,0.5)] rounded"></i>
-                        <span>Zugang zu monatlichen Live-Calls (1-2x) für Marktupdates</span>
+                        <span>Zugang zur exklusiven Telegram-Gruppe für Marktupdates</span>
                     </li>
                     <li class="flex items-center">
                         <i class="fas fa-check-square text-green-500 text-2xl mr-4 shadow-[0_0_10px_rgba(34,197,94,0.5)] rounded"></i>
